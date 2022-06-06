@@ -1,0 +1,6 @@
+# frontend
+
+- react
+- tailwind
+- javascript
+

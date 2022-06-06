@@ -1,0 +1,38 @@
+version: '3'
+services:
+  front:
+    build:
+      context: .
+      dockerfile: ./docker/front/Dockerfile
+    container_name: react-front
+    tty: true
+    volumes:
+      - ./front:/app/front
+    command: sh -c "cd /app/front && npm install && npm start"
+    ports:
+      - 3000:3000
+
+  server:
+    build:
+      context: .
+      dockerfile: ./docker/server/Dockerfile
+    container_name: go-server
+    ports:
+      - 8000:8000
+    tty: true
+    volumes:
+      - ./server:/go/src/app
+    depends_on:
+      - db
+
+  db:
+    container_name: psql-db
+    build: ./docker/db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/postgresql/data
+    env_file:
+      - docker-compose.env
+    restart: always
