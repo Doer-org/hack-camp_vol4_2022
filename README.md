@@ -37,4 +37,5 @@ docker-compose up -d
 
 ## reference
 - [golang+reactなアプリの開発環境をモノレポで作る](https://zenn.dev/karabiner/articles/golang_react_monorepo)
+- [Webサイトのバックエンドアーキテクチャとは？](https://jp.indeed.com/career-advice/career-development/what-is-backend-web-architecture)
 - ...
