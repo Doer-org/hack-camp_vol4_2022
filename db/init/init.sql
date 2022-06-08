@@ -1,26 +1,21 @@
---ユーザーの作成
-CREATE USER doer;
-
---DBの作成
-CREATE DATABASE doer;
-
---ユーザーにDBの権限をまとめて付与
-GRANT ALL PRIVILEGES ON DATABASE doer TO doer;
-
---ユーザーを切り替え
-\c doer
+-- DB切り替え
+\c omikuji
 
 --テーブルを作成
 CREATE TABLE okashi (
-  id    integer, 
-  name  varchar(30)
+  id      SERIAL NOT NULL, 
+  name    VARCHAR(255) NOT NULL,
+  price   INTEGER NOT NULL,
+  img_url VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
 );
 
 --テーブルにデータを挿入
-INSERT INTO okashi (id,name)
- SELECT 
-     i, format('okashi_%s', i)
- FROM
-     generate_series(1,1000) as i
-;
+INSERT INTO okashi (name,price,img_url) 
+VALUES ('test',100,'https://google.com');
 
+INSERT INTO okashi (name,price,img_url) 
+VALUES ('test2',100,'https://google.com');
+
+INSERT INTO okashi (name,price,img_url) 
+VALUES ('test3',100,'https://google.com');
