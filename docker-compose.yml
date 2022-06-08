@@ -36,3 +36,15 @@ services:
     env_file:
       - docker-compose.env
     restart: always
+
+  scraping:
+    container_name: python-scraping
+    build: ./docker/scraping
+    volumes:
+      - ./scraping:/root/src
+    env_file:
+      - docker-compose.env
+    depends_on:
+      - db
+    command: python main.py
+
