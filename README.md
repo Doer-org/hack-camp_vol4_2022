@@ -26,10 +26,46 @@ POSTGRES_DB=<DBNAME>
 TZ=<TIMEZONE>
 ```
 
-<br>
+
+## Make
+
+docker-compose 環境を立ち上げます
 
 ```
-docker-compose up -d
+make
+```
+
+<br>
+
+dbやcacheは保持したまま再起動
+
+```
+make restart
+```
+
+<br>
+
+dbやcacheも削除してから再起動
+
+```
+make re
+```
+
+
+<br>
+
+docker環境のdbにアクセスします
+
+```
+make attach-db
+```
+
+<br>
+
+do'erからのメッセージ
+
+```
+make doer
 ```
 
 <br>
