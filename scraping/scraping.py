@@ -33,8 +33,8 @@ def scraping():
             cur = conn.cursor()
 
             insert_sql = f"\
-                INSERT INTO okashi (name,price,img_url) \
-                VALUES ('{name}',{price},'{img_url}');\
+                INSERT INTO okashi (name,price,img_url,likes) \
+                VALUES ('{name}',{price},'{img_url}', 0);\
             "
             cur.execute(insert_sql)
             conn.commit()
