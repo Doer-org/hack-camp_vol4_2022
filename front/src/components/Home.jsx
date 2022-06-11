@@ -1,3 +1,3 @@
 export const Home = () => {
-  return <p>aaa</p>;
+  return <p className="my-60" id="home">aaa</p>;
 };
