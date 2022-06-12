@@ -51,7 +51,7 @@ down:
 	@echo "Please wait ..."
 	@echo "------------------------"
 	@echo ""
-	docker-compose down
+	docker-compose down --rmi all --volumes --remove-orphans
 	@echo ""
 	@echo "The docker-compose environment has been successfully close."
 	@echo ""
