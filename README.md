@@ -18,10 +18,10 @@
     <td>
       5人<br>
       <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/nishi0929"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/kai-0307"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/Meow520"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/hikari-8"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
+      <b><a href="https://github.com/nishi0929"><img src="https://github.com/nishi0929.png" width="50px;" /></b>
+      <b><a href="https://github.com/kai-0307"><img src="https://github.com/kai-0307.png" width="50px;" /></b>
+      <b><a href="https://github.com/Meow520"><img src="https://github.com/Meow520.png" width="50px;" /></b>
+      <b><a href="https://github.com/hikari-8"><img src="https://github.com/hikari-8.png" width="50px;" /></b>
 <!--       <b><a href="https://github.com/knknk98"><img src="https://github.com/knknk98.png" width="50px;" /></b>
       <b><a href="https://github.com/zwwaa-ku"><img src="https://github.com/zwwaa-ku.png" width="50px;" /></b>
       <b><a href="https://github.com/yuta-ike"><img src="https://github.com/yuta-ike.png" width="50px;" /></b> -->
