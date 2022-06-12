@@ -13,4 +13,3 @@ func (db *DBRepository) Begin() *gorm.DB {
 func (db *DBRepository) Connect() *gorm.DB {
 	return db.DB.Connect()
 }
-
