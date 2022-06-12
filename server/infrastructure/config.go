@@ -26,8 +26,7 @@ func NewConfig() *Config {
 	c.DB.DBName = os.Getenv("POSTGRES_DB")
 
 	// apiのport設定
-	c.Routing.Port = ":8000"
+	c.Routing.Port = "8000"
 
 	return c
-
 }
