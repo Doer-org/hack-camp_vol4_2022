@@ -17,6 +17,8 @@ services:
       context: .
       dockerfile: ./docker/server/Dockerfile
     container_name: go-server
+    env_file:
+      - docker-compose.env
     ports:
       - 8000:8000
     tty: true
