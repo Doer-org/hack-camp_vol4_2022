@@ -3,13 +3,13 @@
 
 <br>
 
-<!-- ## member
+## member
 - @mahiro72
-- @kengo__du
-- @react0307
-- @meow_520
-- @kanbarusuruga07
- -->
+- @nishi0929
+- @kai-0307
+- @Meow520
+- @hikari-8
+
  
 ## member
 <table>
@@ -18,10 +18,10 @@
     <td>
       5人<br>
       <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
+      <b><a href="https://github.com/nishi0929"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
+      <b><a href="https://github.com/kai-0307"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
+      <b><a href="https://github.com/Meow520"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
+      <b><a href="https://github.com/hikari-8"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
 <!--       <b><a href="https://github.com/knknk98"><img src="https://github.com/knknk98.png" width="50px;" /></b>
       <b><a href="https://github.com/zwwaa-ku"><img src="https://github.com/zwwaa-ku.png" width="50px;" /></b>
       <b><a href="https://github.com/yuta-ike"><img src="https://github.com/yuta-ike.png" width="50px;" /></b> -->
@@ -30,11 +30,11 @@
   <tr>
     <th>担当</th>
     <td>
-      <a href="https://github.com/mahiro72">@mahiro72</a> : aaaaa <br>
-      <a href="https://github.com/mahiro72">@mahiro72</a> : aaaaa <br>
-      <a href="https://github.com/mahiro72">@mahiro72</a> : aaaaa <br>
-      <a href="https://github.com/mahiro72">@mahiro72</a> : aaaaa <br>
-      <a href="https://github.com/mahiro72">@mahiro72</a> : aaaaa <br>
+      <a href="https://github.com/mahiro72">@mahiro72</a> : backend <br>
+      <a href="https://github.com/nishi0929">@nishi0929</a> : frontend <br>
+      <a href="https://github.com/kai-0307">@kai-0307</a> : backend <br>
+      <a href="https://github.com/Meow520">@Meow520</a> : frontend <br>
+      <a href="https://github.com/hikari-8">@hikari-8</a> : frontend <br>
 <!--       <a href="https://github.com/knknk98">@knknk98</a> : フロントエンド(UI)<br>
       <a href="https://github.com/zwwaa-ku">@Nobuaki-M</a> : フロントエンド(UI)<br>
       <a href="https://github.com/yuta-ike">@yuta-ike</a>：メンター、アイデア出し、一部フロントエンドの実装<br> -->
