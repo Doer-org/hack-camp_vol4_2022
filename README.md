@@ -5,7 +5,7 @@
 
 ## member
 - @mahiro72
-- @nishi0929
+- @nisi0929
 - @kai-0307
 - @Meow520
 - @hikari-8
@@ -18,7 +18,7 @@
     <td>
       5人<br>
       <b><a href="https://github.com/mahiro72"><img src="https://github.com/mahiro72.png" width="50px;" /></b>
-      <b><a href="https://github.com/nishi0929"><img src="https://github.com/nishi0929.png" width="50px;" /></b>
+      <b><a href="https://github.com/nisi0929"><img src="https://github.com/nisi0929.png" width="50px;" /></b>
       <b><a href="https://github.com/kai-0307"><img src="https://github.com/kai-0307.png" width="50px;" /></b>
       <b><a href="https://github.com/Meow520"><img src="https://github.com/Meow520.png" width="50px;" /></b>
       <b><a href="https://github.com/hikari-8"><img src="https://github.com/hikari-8.png" width="50px;" /></b>
@@ -31,7 +31,7 @@
     <th>担当</th>
     <td>
       <a href="https://github.com/mahiro72">@mahiro72</a> : backend <br>
-      <a href="https://github.com/nishi0929">@nishi0929</a> : frontend <br>
+      <a href="https://github.com/nisi0929">@nisi0929</a> : frontend <br>
       <a href="https://github.com/kai-0307">@kai-0307</a> : backend <br>
       <a href="https://github.com/Meow520">@Meow520</a> : frontend <br>
       <a href="https://github.com/hikari-8">@hikari-8</a> : frontend <br>
