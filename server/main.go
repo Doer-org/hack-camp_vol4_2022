@@ -1,19 +1,16 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
+	// "net/http"
 
-	"github.com/gin-gonic/gin"
+	"github.com/Doer-org/hack-camp_vol4_2022/server/infrastructure"
+	// "github.com/gin-gonic/gin"
 )
 
 func main() {
-	s := gin.Default()
 
-	s.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"ping": "pong",
-		})
-	})
+	db := infrastructure.NewDB()
+	fmt.Println(db.Connect())
 
-	s.Run(":8000")
 }
