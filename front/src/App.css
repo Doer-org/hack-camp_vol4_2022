@@ -5,3 +5,7 @@
 .main-color {
   background-color: #ff8700;
 }
+
+#results {
+  border-color: #ff8700;
+}
