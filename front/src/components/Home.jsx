@@ -1,8 +1,6 @@
 export const Home = () => {
-  return (
-    <div>
-      <p>aaa</p>
-    </div>
-  );
+
+  return <p className="my-60" id="home">aaa</p>;
+
 };
 
