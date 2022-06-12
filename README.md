@@ -3,12 +3,6 @@
 
 <br>
 
-## member
-- @mahiro72
-- @nisi0929
-- @kai-0307
-- @Meow520
-- @hikari-8
 
  
 ## member
