@@ -45,7 +45,7 @@ def scraping():
             cur = conn.cursor()
 
             insert_sql = f"\
-                INSERT INTO okashi (name,price,img_url,detail,likes) \
+                INSERT INTO snack (name,price,img_url,detail,likes) \
                 VALUES ('{name}','{price}','{img_url}','{detail}', 0);\
             "
 
