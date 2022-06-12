@@ -26,6 +26,7 @@ func (controller *SnackController) Get(c Context){
 	snack, res := controller.Interactor.Get(id)
 	if res.Error != nil{
 		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
+		return
 	}
 
 	c.JSON(res.StatusCode, NewH("success",snack))
