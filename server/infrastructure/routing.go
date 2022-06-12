@@ -8,16 +8,16 @@ import (
 )
 
 type Routing struct {
-	DB  *DB
-	Gin *gin.Engine
+	DB   *DB
+	Gin  *gin.Engine
 	Port string
 }
 
 func NewRouting(db *DB) *Routing {
 	c := NewConfig()
 	r := &Routing{
-		DB: db,
-		Gin: gin.Default(),
+		DB:   db,
+		Gin:  gin.Default(),
 		Port: c.Routing.Port,
 	}
 	r.setRouting()
@@ -25,8 +25,8 @@ func NewRouting(db *DB) *Routing {
 }
 
 func (r *Routing) setRouting() {
-	snackController :=  controllers.NewSnackController(r.DB)
-	r.Gin.GET("/snack/:id",func(c *gin.Context){snackController.Get(c)})
+	snackController := controllers.NewSnackController(r.DB)
+	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.Get(c) })
 }
 
 func (r *Routing) Run() {

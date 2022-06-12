@@ -13,7 +13,7 @@ func (repo *SnackRepository) FindByID(db *gorm.DB, id int) (snack domain.Snack, 
 	snack = domain.Snack{}
 	db.First(&snack, id)
 	if snack.Id <= 0 {
-		return domain.Snack{},errors.New("snack is not found")
+		return domain.Snack{}, errors.New("snack is not found")
 	}
 	return snack, nil
 }

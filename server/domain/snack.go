@@ -10,9 +10,9 @@ type Snack struct {
 }
 
 type SnackForGet struct {
-	Id      int `json:"id"`
+	Id      int    `json:"id"`
 	Name    string `json:"name"`
-	Price   int `json:"price"`
+	Price   int    `json:"price"`
 	Img_url string `json:"imgUrl"`
 	Detail  string `json:"detail"`
 	Likes   string `json:"likes"`

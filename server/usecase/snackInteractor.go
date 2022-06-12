@@ -7,12 +7,12 @@ type SnackInteractor struct {
 	Snack SnackRepository
 }
 
-func (interactor *SnackInteractor) Get(id int) (snack domain.SnackForGet, resultStatus *ResultStatus){
+func (interactor *SnackInteractor) Get(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
 	db := interactor.DB.Connect()
-	foundSnack , err := interactor.Snack.FindByID(db, id)
-	if err != nil{
-		return domain.SnackForGet{},NewResultStatus(404,err)
+	foundSnack, err := interactor.Snack.FindByID(db, id)
+	if err != nil {
+		return domain.SnackForGet{}, NewResultStatus(404, err)
 	}
 	snack = foundSnack.BuildForGet()
-	return snack,NewResultStatus(200,nil)
+	return snack, NewResultStatus(200, nil)
 }

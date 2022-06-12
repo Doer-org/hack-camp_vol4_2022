@@ -14,19 +14,20 @@ type SnackController struct {
 func NewSnackController(db database.DB) *SnackController {
 	return &SnackController{
 		Interactor: usecase.SnackInteractor{
-			DB: &database.DBRepository{ DB:db},
+			DB:    &database.DBRepository{DB: db},
 			Snack: &database.SnackRepository{},
 		},
 	}
 }
 
-func (controller *SnackController) Get(c Context){
+func (controller *SnackController) Get(c Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 
 	snack, res := controller.Interactor.Get(id)
-	if res.Error != nil{
+	if res.Error != nil {
 		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
+		return
 	}
 
-	c.JSON(res.StatusCode, NewH("success",snack))
+	c.JSON(res.StatusCode, NewH("success", snack))
 }
