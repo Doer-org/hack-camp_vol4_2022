@@ -91,9 +91,13 @@ fclean:clean del-db
 # dbやcacheも削除してから再起動
 re:fclean restart
 
+# lint
+lint:
+	gofmt -l -w ./server
+
 doer:
 	@echo ""
 	@echo "do'er saiko---!!!!"
 	@echo ""
 
-.PHONY: all start build restart down attach-db del-db del-cache clean fclean re doer
+.PHONY: all start build restart down attach-db del-db del-cache clean fclean re lint doer
