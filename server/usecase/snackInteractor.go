@@ -7,7 +7,8 @@ type SnackInteractor struct {
 	Snack SnackRepository
 }
 
-func (interactor *SnackInteractor) Get(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
+// 指定したidのお菓子を取得するAPI
+func (interactor *SnackInteractor) FindByID(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
 	db := interactor.DB.Connect()
 	foundSnack, err := interactor.Snack.FindByID(db, id)
 	if err != nil {
@@ -15,4 +16,28 @@ func (interactor *SnackInteractor) Get(id int) (snack domain.SnackForGet, result
 	}
 	snack = foundSnack.BuildForGet()
 	return snack, NewResultStatus(200, nil)
+}
+
+// ランダムでお菓子を3つ返すAPI
+func (interactor *SnackInteractor) GetRandom() (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
+	db := interactor.DB.Connect()
+	foundSnacks, err := interactor.Snack.GetRandom(db)
+	if err != nil {
+		return []domain.SnackForGet{}, NewResultStatus(404, err)
+	}
+	for _, foundSnack := range foundSnacks {
+		snacks =  append(snacks, foundSnack.BuildForGet())
+	}
+	return snacks, NewResultStatus(200, nil)
+}
+
+// id を指定していいねをするAPI
+func (interactor *SnackInteractor) LikeSnack(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
+	db := interactor.DB.Connect()
+	foundSnack, err := interactor.Snack.LikeSnack(db, id)
+	if err!=nil {
+		return  domain.SnackForGet{},NewResultStatus(404,err)
+	}
+	snack = foundSnack.BuildForGet()
+	return snack, NewResultStatus(200,nil)
 }

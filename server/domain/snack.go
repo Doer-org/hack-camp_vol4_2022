@@ -18,6 +18,7 @@ type SnackForGet struct {
 	Likes   int    `json:"likes"`
 }
 
+// jsonで扱える構造体を返す
 func (s *Snack) BuildForGet() SnackForGet {
 	snack := SnackForGet{}
 	snack.Id = s.Id
