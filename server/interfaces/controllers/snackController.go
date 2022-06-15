@@ -31,3 +31,14 @@ func (controller *SnackController) Get(c Context) {
 
 	c.JSON(res.StatusCode, NewH("success", snack))
 }
+
+
+func (controller *SnackController) GetRandom(c Context) {
+	snacks, res := controller.Interactor.GetRandom()
+	if res.Error != nil {
+		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
+		return
+	}
+
+	c.JSON(res.StatusCode, NewH("success", snacks))
+}

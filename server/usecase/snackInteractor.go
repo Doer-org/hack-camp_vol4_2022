@@ -16,3 +16,16 @@ func (interactor *SnackInteractor) Get(id int) (snack domain.SnackForGet, result
 	snack = foundSnack.BuildForGet()
 	return snack, NewResultStatus(200, nil)
 }
+
+
+func (interactor *SnackInteractor) GetRandom() (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
+	db := interactor.DB.Connect()
+	foundSnacks, err := interactor.Snack.RandomGetSnack(db)
+	if err != nil {
+		return []domain.SnackForGet{}, NewResultStatus(404, err)
+	}
+	for _, foundSnack := range foundSnacks {
+		snacks =  append(snacks, foundSnack.BuildForGet())
+	}
+	return snacks, NewResultStatus(200, nil)
+}
