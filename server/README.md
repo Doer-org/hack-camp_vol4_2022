@@ -69,6 +69,28 @@ curl http://localhost:8000/snack/1
 }
 ```
 
+<br>
+
+### id を指定していいねをするAPI
+
+
+```
+curl http://localhost:8000/snack/like/1
+```
+
+```
+{
+    "message": "success",
+    "data": {
+        "id": 1,
+        "name": "しっとり食感のご褒美ソフトチョコクッキー",
+        "price": 156,
+        "imgUrl": "https://www.family.co.jp/content/dam/family/goods/4821939.jpg",
+        "detail": "マカダミア、アーモンド、ココナッツ3種類の素材を使用した、濃厚なチョコ風味としっとり食感が特徴のソフトクッキーです。",
+        "likes": 5
+    }
+}
+```
 
 
 
