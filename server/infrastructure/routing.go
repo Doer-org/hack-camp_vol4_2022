@@ -26,7 +26,15 @@ func NewRouting(db *DB) *Routing {
 
 func (r *Routing) setRouting() {
 	snackController := controllers.NewSnackController(r.DB)
-	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.Get(c) })
+
+	// 指定したidのお菓子を取得するAPI
+	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.FindByID(c) })
+
+	// ランダムでお菓子を3つ返すAPI
+	r.Gin.GET("/snack/random", func(c *gin.Context) { snackController.GetRandom(c) })
+
+	// id を指定していいねをするAPI
+	r.Gin.GET("/snack/like/:id", func(c *gin.Context) { snackController.LikeSnack(c) })
 }
 
 func (r *Routing) Run() {
