@@ -23,8 +23,8 @@ func (repo *SnackRepository) FindByID(db *gorm.DB, id int) (snack domain.Snack, 
 	return snack, nil
 }
 
-// ランダムでお菓子を3つ返すAPI
-func (repo *SnackRepository) GetRandom(db *gorm.DB) (snacks []domain.Snack, err error) {
+// ランダムでお菓子を返すAPI
+func (repo *SnackRepository) GetRandom(db *gorm.DB, price int, cnt int) (snacks []domain.Snack, err error) {
 	snacks = []domain.Snack{}
 
 	// snaksテーブルの行数
@@ -35,9 +35,12 @@ func (repo *SnackRepository) GetRandom(db *gorm.DB) (snacks []domain.Snack, err 
 		return []domain.Snack{}, errors.New("too few snacks")
 	}
 
-	// randomなidを3つ取得し、配列に入れる
+	// randomなidをcnt個取得し、配列に入れる
+	// 未実装
 	randomIds := []int{}
-	for i:=0;i<3;i++{
+	sumPrice := 0
+	for i:=0;i<cnt && ;i++{
+		db.
 		randomIds = append(randomIds, rand.Intn(len))
 	}
 
