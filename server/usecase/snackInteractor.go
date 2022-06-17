@@ -32,12 +32,26 @@ func (interactor *SnackInteractor) GetRandom(price int, emotion int) (snacks []d
 }
 
 // id を指定していいねをするAPI
-func (interactor *SnackInteractor) LikeSnack(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
+func (interactor *SnackInteractor) LikeSnack(id int, value int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
 	db := interactor.DB.Connect()
-	foundSnack, err := interactor.Snack.LikeSnack(db, id)
+	foundSnack, err := interactor.Snack.LikeSnack(db, id, value)
 	if err != nil {
 		return domain.SnackForGet{}, NewResultStatus(404, err)
 	}
 	snack = foundSnack.BuildForGet()
 	return snack, NewResultStatus(200, nil)
+}
+
+
+// お菓子Top10を返すAPI
+func (interactor *SnackInteractor) RankingSnack() (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
+	db := interactor.DB.Connect()
+	foundSnacks, err := interactor.Snack.RankingSnack(db)
+	if err != nil {
+		return []domain.SnackForGet{}, NewResultStatus(404, err)
+	}
+	for _, foundSnack := range foundSnacks {
+		snacks = append(snacks, foundSnack.BuildForGet())
+	}
+	return snacks, NewResultStatus(200, nil)
 }

@@ -37,6 +37,12 @@ func (r *Routing) setRouting() {
 	// id を指定していいねをするAPI
 	r.Gin.GET("/snack/like/:id", func(c *gin.Context) { snackController.LikeSnack(c) })
 
+	// お菓子Top10を返すAPI
+	r.Gin.GET("/snack/ranking", func(c *gin.Context) { snackController.RankingSnack(c) })
+
+	// お菓子を全部返すAPI
+
+
 }
 
 func (r *Routing) Run() {
