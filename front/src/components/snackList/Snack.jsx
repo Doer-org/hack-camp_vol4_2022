@@ -1,5 +1,4 @@
-import snack from "../../images/snack.jpeg";
-import heart from "../../images/heart.png";
+import heart from "../../data/images/heart.png";
 
 import React from 'react'
 
