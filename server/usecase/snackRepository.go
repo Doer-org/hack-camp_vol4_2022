@@ -12,4 +12,5 @@ type SnackRepository interface {
 	FindByID(db *gorm.DB, id int) (snack domain.Snack, err error)
 	GetRandom(db *gorm.DB, price int, emotion int) (snacks []domain.Snack, err error)
 	LikeSnack(db *gorm.DB, id int, value int) (snack domain.Snack, err error)
+	RankingSnack(db *gorm.DB) (snacks []domain.Snack, err error)
 }
