@@ -15,9 +15,12 @@ export const Form = () => {
     }
 
     return (
-    <>
+    <div className="max-w-5xl mx-auto">
         <div className="
+                mx-auto
                 text-center
+                
+
                 mt-14 sm:mt-20 md:mt-24 lg:mt-44 
                 mx-3 sm:mx-16 md:mx-32 lg:mx-70 
                 rounded-2xl 
@@ -180,6 +183,6 @@ export const Form = () => {
 
         </div>
 
-    </>
+    </div>
     );
 };
