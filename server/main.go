@@ -1,19 +1,11 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/Doer-org/hack-camp_vol4_2022/server/infrastructure"
 )
 
 func main() {
-	s := gin.Default()
-
-	s.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"ping": "pong",
-		})
-	})
-
-	s.Run(":8000")
+	db := infrastructure.NewDB()
+	r := infrastructure.NewRouting(db)
+	r.Run()
 }
