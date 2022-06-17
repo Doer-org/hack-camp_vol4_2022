@@ -24,33 +24,72 @@ func (repo *SnackRepository) FindByID(db *gorm.DB, id int) (snack domain.Snack, 
 }
 
 // ランダムでお菓子を返すAPI
-func (repo *SnackRepository) GetRandom(db *gorm.DB, price int, cnt int) (snacks []domain.Snack, err error) {
+
+// emotion
+// 0 : normal
+// 1 : sad
+// 2 : angry
+// 3 : happy
+
+// flavor
+// 1 : sweet
+// 2 : spicy
+// 3 : salty
+
+func (repo *SnackRepository) GetRandom(db *gorm.DB, price int, emotion int) (snacks []domain.Snack, err error) {
+
 	snacks = []domain.Snack{}
 
 	// snaksテーブルの行数
-	len := (int)(db.Find(&snacks).RowsAffected)
+	len := (int)(db.Find(&[]domain.Snack{}).RowsAffected)
 
 	// テーブルの行数が3個以下の時
 	if len < 3 {
 		return []domain.Snack{}, errors.New("too few snacks")
 	}
 
-	// randomなidをcnt個取得し、配列に入れる
-	// 未実装
-	randomIds := []int{}
-	sumPrice := 0
-	for i:=0;i<cnt && ;i++{
-		db.
-		randomIds = append(randomIds, rand.Intn(len))
+	// 現在の条件で取得できるすべてのSnacks
+	allSnacks := []domain.Snack{}
+
+	if emotion == 1 {
+		// 悲しいときは甘いもの!
+		len = (int)(db.Where("flavor = ?", 1).Find(&allSnacks).RowsAffected)
+		// db.Where("flavor = ?", 1).Find(&allSnacks)
+
+	} else if emotion == 2 {
+		// いらいらしたら辛いもの！
+		len = (int)(db.Where("flavor = ?", 2).Find(&allSnacks).RowsAffected)
+		// db.Where("flavor = ?", 2).Find(&allSnacks)
+
+	} else if emotion == 3 {
+		// 幸せなときはしょっぱいもの(??????)
+		len = (int)(db.Where("flavor = ?", 3).Find(&allSnacks).RowsAffected)
+		// db.Where("flavor = ?", 3).Find(&allSnacks)
+
+	} else {
+		// 無感情
+		db.Find(&allSnacks)
 	}
 
-	db.Where(randomIds).Find(&snacks)
-	return snacks,nil
+	sumPrice := 0
+
+	for i := 0; i < len; i++ {
+		tmpSnacks := allSnacks[rand.Intn(len)-1]
+
+		// 予算超えた場合
+		if sumPrice+tmpSnacks.Price > price {
+			break
+		}
+		snacks = append(snacks, tmpSnacks)
+		sumPrice += tmpSnacks.Price
+	}
+
+	return snacks, nil
 }
 
 // id を指定していいねをするAPI
 func (repo *SnackRepository) LikeSnack(db *gorm.DB, id int) (snack domain.Snack, err error) {
-	snack = domain.Snack{Id:id}
+	snack = domain.Snack{Id: id}
 	db.First(&snack)
 
 	// 指定したidのsnackが見つからなかった時

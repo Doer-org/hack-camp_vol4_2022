@@ -10,6 +10,6 @@ import (
 // にあります
 type SnackRepository interface {
 	FindByID(db *gorm.DB, id int) (snack domain.Snack, err error)
-	GetRandom(db *gorm.DB, price int, cnt int) (snacks []domain.Snack, err error)
+	GetRandom(db *gorm.DB, price int, emotion int) (snacks []domain.Snack, err error)
 	LikeSnack(db *gorm.DB, id int) (snack domain.Snack, err error)
 }

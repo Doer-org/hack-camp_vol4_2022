@@ -3,7 +3,7 @@ from db.insert import insert_db
 import time
 
 def main():
-    time.sleep(20)
+    time.sleep(60)
 
     df = df_read_csv('./data/csv/snack.csv')
 

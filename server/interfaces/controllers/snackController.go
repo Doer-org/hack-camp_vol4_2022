@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"strconv"
-	"math"
 
 	"github.com/Doer-org/hack-camp_vol4_2022/server/interfaces/database"
 	"github.com/Doer-org/hack-camp_vol4_2022/server/usecase"
@@ -36,17 +35,18 @@ func (controller *SnackController) FindByID(c Context) {
 }
 
 // ランダムでお菓子を返すAPI
-
 func (controller *SnackController) GetRandom(c Context) {
 	// defaultでprice1000とcnt=3
-	price,_ := strconv.Atoi(c.DefaultQuery("price","1000"))
-	cnt,_ := strconv.Atoi(c.DefaultQuery("cnt","3"))
+	price, _ := strconv.Atoi(c.DefaultQuery("price", "1000"))
+	emotion, _ := strconv.Atoi(c.DefaultQuery("emotion", "0"))
 
-	// お菓子の値を 0 < price <= 10000, 0 < cnt <= 100　になるように修正
+	// priceの値を 0に変更 < price <= 10000になるように修正
+	// emotionの値が 0 <= emotion <=3 以外の場合0に変更
+	// 命名がいまいち, なおしたい
 	fixPrice := utils.FixPrice(price)
-	fixCnt := utils.FixCnt(cnt)
+	fixEmotion := utils.FixEmotion(emotion)
 
-	snacks, res := controller.Interactor.GetRandom(fixPrice, fixCnt)
+	snacks, res := controller.Interactor.GetRandom(fixPrice, fixEmotion)
 	if res.Error != nil {
 		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
 		return
@@ -65,5 +65,5 @@ func (controller *SnackController) LikeSnack(c Context) {
 		return
 	}
 
-	c.JSON(res.StatusCode, NewH("success",snack))
+	c.JSON(res.StatusCode, NewH("success", snack))
 }
