@@ -106,3 +106,9 @@ func (repo *SnackRepository) RankingSnack(db *gorm.DB) (snacks []domain.Snack, e
 	db.Limit(10).Order("likes desc").Find(&snacks)
 	return snacks, nil
 }
+
+// 全てのお菓子を返すAPI
+func (repo *SnackRepository) AllSnack(db *gorm.DB) (snacks []domain.Snack, err error) {
+	db.Find(&snacks)
+	return snacks, nil
+}

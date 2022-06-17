@@ -55,3 +55,16 @@ func (interactor *SnackInteractor) RankingSnack() (snacks []domain.SnackForGet, 
 	}
 	return snacks, NewResultStatus(200, nil)
 }
+
+// お菓子Top10を返すAPI
+func (interactor *SnackInteractor) AllSnack() (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
+	db := interactor.DB.Connect()
+	foundSnacks, err := interactor.Snack.AllSnack(db)
+	if err != nil {
+		return []domain.SnackForGet{}, NewResultStatus(404, err)
+	}
+	for _, foundSnack := range foundSnacks {
+		snacks = append(snacks, foundSnack.BuildForGet())
+	}
+	return snacks, NewResultStatus(200, nil)
+}
