@@ -15,7 +15,7 @@ export const Form = () => {
     }
 
     return (
-    <div className="max-w-5xl mx-auto">
+    <div className="lg:max-w-5xl w-4/5 mx-auto">
         <div className="
                 mx-auto
                 text-center
