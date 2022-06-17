@@ -11,12 +11,28 @@ export const Navbar = () => {
         src={image}
         alt="お菓子おみくじロゴ"
       />
+      
+      <Link
+        to="/snackList"
+        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
+      >
+        snacks
+      </Link>
+    
       <Link
         to="/rank"
         className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
       >
         Ranking
       </Link>
+
+      <Link
+        to="/about"
+        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
+      >
+        About
+      </Link>
+
       <Link
         to="/"
         className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
