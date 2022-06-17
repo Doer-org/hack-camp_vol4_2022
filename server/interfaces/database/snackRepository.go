@@ -54,17 +54,14 @@ func (repo *SnackRepository) GetRandom(db *gorm.DB, price int, emotion int) (sna
 	if emotion == 1 {
 		// 悲しいときは甘いもの!
 		len = (int)(db.Where("flavor = ?", 1).Find(&allSnacks).RowsAffected)
-		// db.Where("flavor = ?", 1).Find(&allSnacks)
 
 	} else if emotion == 2 {
 		// いらいらしたら辛いもの！
 		len = (int)(db.Where("flavor = ?", 2).Find(&allSnacks).RowsAffected)
-		// db.Where("flavor = ?", 2).Find(&allSnacks)
 
 	} else if emotion == 3 {
 		// 幸せなときはしょっぱいもの(??????)
 		len = (int)(db.Where("flavor = ?", 3).Find(&allSnacks).RowsAffected)
-		// db.Where("flavor = ?", 3).Find(&allSnacks)
 
 	} else {
 		// 無感情
@@ -88,7 +85,7 @@ func (repo *SnackRepository) GetRandom(db *gorm.DB, price int, emotion int) (sna
 }
 
 // id を指定していいねをするAPI
-func (repo *SnackRepository) LikeSnack(db *gorm.DB, id int) (snack domain.Snack, err error) {
+func (repo *SnackRepository) LikeSnack(db *gorm.DB, id int, value int) (snack domain.Snack, err error) {
 	snack = domain.Snack{Id: id}
 	db.First(&snack)
 
@@ -97,7 +94,7 @@ func (repo *SnackRepository) LikeSnack(db *gorm.DB, id int) (snack domain.Snack,
 		return domain.Snack{}, errors.New("snack is not found")
 	}
 
-	snack.Likes += 1
+	snack.Likes += value
 	db.Save(&snack)
 	return snack, nil
 }

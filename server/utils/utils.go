@@ -22,3 +22,15 @@ func FixEmotion(emotion int) int {
 	}
 	return emotion
 }
+
+
+// valueの値を 0 < value <= 100 になるように設定
+func FixValue(value int) int {
+	// 最小値確認
+	fixValue := math.Max(1, (float64)(value))
+
+	// 最大値確認
+	fixValue = math.Min(100, float64(fixValue))
+
+	return (int)(fixValue)
+}

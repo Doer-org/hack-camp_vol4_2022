@@ -36,12 +36,10 @@ func (controller *SnackController) FindByID(c Context) {
 
 // ランダムでお菓子を返すAPI
 func (controller *SnackController) GetRandom(c Context) {
-	// defaultでprice1000とcnt=3
+	// defaultでprice=1000とcnt=3
 	price, _ := strconv.Atoi(c.DefaultQuery("price", "1000"))
 	emotion, _ := strconv.Atoi(c.DefaultQuery("emotion", "0"))
 
-	// priceの値を 0に変更 < price <= 10000になるように修正
-	// emotionの値が 0 <= emotion <=3 以外の場合0に変更
 	// 命名がいまいち, なおしたい
 	fixPrice := utils.FixPrice(price)
 	fixEmotion := utils.FixEmotion(emotion)
@@ -59,7 +57,11 @@ func (controller *SnackController) GetRandom(c Context) {
 func (controller *SnackController) LikeSnack(c Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 
-	snack, res := controller.Interactor.LikeSnack(id)
+	// defaultでvalue=1
+	value, _ := strconv.Atoi(c.DefaultQuery("value", "1"))
+	fixValue := utils.FixValue(value)
+
+	snack, res := controller.Interactor.LikeSnack(id, fixValue)
 	if res.Error != nil {
 		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
 		return
