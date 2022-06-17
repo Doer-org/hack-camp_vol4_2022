@@ -41,6 +41,7 @@ func (r *Routing) setRouting() {
 	r.Gin.GET("/snack/ranking", func(c *gin.Context) { snackController.RankingSnack(c) })
 
 	// お菓子を全部返すAPI
+	r.Gin.GET("/snack/all", func(c *gin.Context) { snackController.AllSnack(c) })
 
 
 }

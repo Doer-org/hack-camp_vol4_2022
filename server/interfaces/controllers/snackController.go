@@ -83,3 +83,16 @@ func (controller *SnackController) RankingSnack(c Context) {
 
 	c.JSON(res.StatusCode, NewH("success", snacks))
 }
+
+// お菓子全てを返すAPI
+func (controller *SnackController) AllSnack(c Context) {
+
+	// 全てのsnackが返ってくる
+	snacks, res := controller.Interactor.AllSnack()
+	if res.Error != nil {
+		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
+		return
+	}
+
+	c.JSON(res.StatusCode, NewH("success", snacks))
+}
