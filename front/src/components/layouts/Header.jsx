@@ -1,5 +1,5 @@
 import { HeadHighlight } from "./HeadHighlight";
-import "../App.css";
+import "../../App.css";
 import {Navbar} from "./Navbar"
 
 export const Header = () => {
