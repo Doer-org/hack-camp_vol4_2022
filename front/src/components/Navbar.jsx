@@ -27,7 +27,6 @@ export const Navbar = () => {
       <Menu
         width={`50%`}
         pageWrapId={"page-wrap"}
-        outerContainerId={"outer-container"}
         right
         onClose={"handleOnClose"}
         isOpen={false}
