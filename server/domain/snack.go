@@ -7,6 +7,7 @@ type Snack struct {
 	Img_url string
 	Detail  string
 	Likes   int
+	Flavor  int
 }
 
 type SnackForGet struct {
@@ -16,6 +17,7 @@ type SnackForGet struct {
 	Img_url string `json:"imgUrl"`
 	Detail  string `json:"detail"`
 	Likes   int    `json:"likes"`
+	Flavor  int    `json:"flavor"`
 }
 
 // jsonで扱える構造体を返す
@@ -27,5 +29,6 @@ func (s *Snack) BuildForGet() SnackForGet {
 	snack.Img_url = s.Img_url
 	snack.Detail = s.Detail
 	snack.Likes = s.Likes
+	snack.Flavor = s.Flavor
 	return snack
 }

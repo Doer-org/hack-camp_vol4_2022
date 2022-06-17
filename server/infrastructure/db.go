@@ -42,7 +42,7 @@ func newDB(d *DB) *DB {
 	db, err := gorm.Open("postgres", connInfo)
 
 	//30回接続を試みる
-	for i := 0; i < 30 && err != nil; i++ {
+	for i := 0; i < 100 && err != nil; i++ {
 		fmt.Println(err)
 		fmt.Printf("db connect failed...\n\n")
 		time.Sleep(time.Second * 2)

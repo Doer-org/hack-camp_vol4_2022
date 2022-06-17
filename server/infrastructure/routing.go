@@ -31,10 +31,12 @@ func (r *Routing) setRouting() {
 	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.FindByID(c) })
 
 	// ランダムでお菓子を3つ返すAPI
+	// price(値段)とcnt(個数)を指定してランダムにお菓子を返す
 	r.Gin.GET("/snack/random", func(c *gin.Context) { snackController.GetRandom(c) })
 
 	// id を指定していいねをするAPI
 	r.Gin.GET("/snack/like/:id", func(c *gin.Context) { snackController.LikeSnack(c) })
+
 }
 
 func (r *Routing) Run() {

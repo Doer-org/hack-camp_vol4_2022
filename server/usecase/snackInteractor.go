@@ -18,15 +18,15 @@ func (interactor *SnackInteractor) FindByID(id int) (snack domain.SnackForGet, r
 	return snack, NewResultStatus(200, nil)
 }
 
-// ランダムでお菓子を3つ返すAPI
-func (interactor *SnackInteractor) GetRandom() (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
+// ランダムでお菓子を返すAPI
+func (interactor *SnackInteractor) GetRandom(price int, emotion int) (snacks []domain.SnackForGet, resultStatus *ResultStatus) {
 	db := interactor.DB.Connect()
-	foundSnacks, err := interactor.Snack.GetRandom(db)
+	foundSnacks, err := interactor.Snack.GetRandom(db, price, emotion)
 	if err != nil {
 		return []domain.SnackForGet{}, NewResultStatus(404, err)
 	}
 	for _, foundSnack := range foundSnacks {
-		snacks =  append(snacks, foundSnack.BuildForGet())
+		snacks = append(snacks, foundSnack.BuildForGet())
 	}
 	return snacks, NewResultStatus(200, nil)
 }
@@ -35,9 +35,9 @@ func (interactor *SnackInteractor) GetRandom() (snacks []domain.SnackForGet, res
 func (interactor *SnackInteractor) LikeSnack(id int) (snack domain.SnackForGet, resultStatus *ResultStatus) {
 	db := interactor.DB.Connect()
 	foundSnack, err := interactor.Snack.LikeSnack(db, id)
-	if err!=nil {
-		return  domain.SnackForGet{},NewResultStatus(404,err)
+	if err != nil {
+		return domain.SnackForGet{}, NewResultStatus(404, err)
 	}
 	snack = foundSnack.BuildForGet()
-	return snack, NewResultStatus(200,nil)
+	return snack, NewResultStatus(200, nil)
 }

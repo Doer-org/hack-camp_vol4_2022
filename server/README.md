@@ -9,7 +9,11 @@
 ## API
 
 
-### ランダムでお菓子を3つ返すAPI
+### ランダムでお菓子を返すAPI
+
+パラメータを指定しなければ
+
+price=1000,cnt=3とする
 
 ```
 curl http://localhost:8000/snack/random
