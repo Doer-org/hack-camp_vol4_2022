@@ -51,7 +51,7 @@ export const Form = () => {
                         <div>
                             <label>
                                 <input 
-                                    checked={emotion=="happy"}
+                                    checked={emotion==="happy"}
                                     readOnly
                                     type="radio"
                                     name="option" 
@@ -71,7 +71,7 @@ export const Form = () => {
                         
                             <label>
                                 <input 
-                                    checked={emotion=="sad"}
+                                    checked={emotion==="sad"}
                                     readOnly
                                     type="radio"
                                     name="option" 
@@ -91,7 +91,7 @@ export const Form = () => {
 
                             <label>
                                 <input 
-                                    checked={emotion=="angry"}
+                                    checked={emotion==="angry"}
                                     readOnly
                                     type="radio"
                                     name="option" 
@@ -111,7 +111,7 @@ export const Form = () => {
 
                             <label>
                                 <input 
-                                    checked={emotion=="normal"}
+                                    checked={emotion==="normal"}
                                     readOnly
                                     type="radio"
                                     name="option" 
