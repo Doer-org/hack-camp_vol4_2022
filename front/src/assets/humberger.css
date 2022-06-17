@@ -1,8 +1,8 @@
 .bm-burger-button {
   position: absolute;
   align-items: flex-end;
-  width: 36px;
-  height: 30px;
+  width: 30px;
+  height:30px;
   right: 20px;
   top: 20px;
 }
@@ -18,14 +18,12 @@
 }
 
 .bm-cross {
-  background: #a2bbd4;
+  background: #000;
 }
 
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
-  padding-right: 15px;
-  margin-right: 15px;
+  padding-right: 10%;
+  margin-right: 5%;
 }
 
 .bm-burger-bars-hover {

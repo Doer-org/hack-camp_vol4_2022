@@ -4,13 +4,6 @@ import { push as Menu } from "react-burger-menu";
 import "../assets/humberger.css";
 
 export default (props) => {
-  // const [state, setstate] = useState(false);
-  // const handleStateChange = () => {
-  //     setstate(false)
-  // }
-  // const closeMenu = () => {
-  //     setstate(false)
-  // }
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -29,7 +22,7 @@ export default (props) => {
     >
       <Link
         to="/"
-        className="menu-item text-2xl p-3"
+        className="menu-item text-base sm:text-2xl py-3 "
         onClick={closeSideBar}
       >
         Home
@@ -37,7 +30,7 @@ export default (props) => {
 
       <Link
         to="/rank"
-        className="menu-item text-2xl p-3"
+        className="menu-item text-base sm:text-2xl py-3"
         onClick={closeSideBar}
       >
         Ranking
