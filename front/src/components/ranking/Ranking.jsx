@@ -1,5 +1,5 @@
-import snack from "../images/snack.jpeg";
-import heart from "../images/heart.png";
+import snack from "../../images/snack.jpeg";
+import heart from "../../images/heart.png";
 
 export const Ranking = () => {
   return (

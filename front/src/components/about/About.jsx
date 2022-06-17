@@ -1,5 +1,5 @@
-import users from "../data/users.json";
-import "../About.css";
+import users from "../../data/users.json";
+import "../../styles/about/About.css"
 export const About = () => {
   return (
     <div className="text-center">

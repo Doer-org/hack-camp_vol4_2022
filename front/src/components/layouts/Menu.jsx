@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { push as Menu } from "react-burger-menu";
-import "../assets/humberger.css";
+import "../../assets/humberger.css";
 
 export default (props) => {
   const [isOpen, setOpen] = useState(false);

@@ -1,4 +1,4 @@
-import "../App.css";
+import "../../App.css";
 import React from "react";
 import { useState } from "react";
 
@@ -27,8 +27,10 @@ export const Form = () => {
 
   return (
     <>
-      <div className="text-center mt-14 sm:mt-20 md:mt-24 lg:mt-44 mx-3 sm:mx-16 md:mx-32 lg:mx-70 border-4 rounded-2xl border-black border-opacity-70">
-        <p className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl py-4 md:py-6 lg:py-8 rounded-tl-xl rounded-tr-xl border-black border-opacity-70 border-b-4 main-color">お菓子を見つける</p>
+      <div className="text-center mt-14 sm:mt-20 md:mt-24 lg:mt-44 mx-3 sm:mx-16 md:mx-32 lg:mx-70 border-2 rounded-2xl border-gray-200 border-opacity-70 shadow-2xl">
+        <p className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl py-4 md:py-6 lg:py-8 rounded-tl-xl rounded-tr-xl border-black border-opacity-70 border-b-4 main-color">
+            お菓子を見つける
+        </p>
 
 
         <div className="formField text-lg font-medium sm:text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-6 md:md-6 mt-8 sm:mt-10 md:mt-18 lg:mt-24 mx-2 sm:mx-3.5 md:mx-5 lg:mx-16">
