@@ -1,7 +1,7 @@
 from utils.isnum import isnum
 from utils.isspace import isspace
 
-def shape_price(string: str):
+def shape_price(string: str) -> int:
     price_string = ""
 
     for s in string:
@@ -11,5 +11,8 @@ def shape_price(string: str):
             price_string+=s
         else:
             break
-
-    return price_string
+    try:
+        price = int(price_string)
+        return price
+    except:
+        return 0
