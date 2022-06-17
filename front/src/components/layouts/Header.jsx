@@ -1,4 +1,4 @@
-import "../../App.css";
+import "../../styles/App.css";
 import {Navbar} from "./Navbar"
 
 export const Header = () => {
