@@ -1,10 +1,11 @@
 import "./App.css";
-import { Home } from "./components/Home";
+import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Ranking } from "./components/Ranking";
 import { About } from "./components/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Result } from "./components/Result";
 
 function App() {
   return (
@@ -13,11 +14,12 @@ function App() {
         <div>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Form />} />
             <Route path="/rank" element={<Ranking />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
+        <Result/>
         <Footer />
       </BrowserRouter>
     </div>
