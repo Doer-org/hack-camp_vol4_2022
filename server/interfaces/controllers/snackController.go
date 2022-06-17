@@ -69,3 +69,17 @@ func (controller *SnackController) LikeSnack(c Context) {
 
 	c.JSON(res.StatusCode, NewH("success", snack))
 }
+
+
+// お菓子Top10を返すAPI
+func (controller *SnackController) RankingSnack(c Context) {
+
+	// rankingTop10のsnackが返ってくる
+	snacks, res := controller.Interactor.RankingSnack()
+	if res.Error != nil {
+		c.JSON(res.StatusCode, NewH(res.Error.Error(), nil))
+		return
+	}
+
+	c.JSON(res.StatusCode, NewH("success", snacks))
+}

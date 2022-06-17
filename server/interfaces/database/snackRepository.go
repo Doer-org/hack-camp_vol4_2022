@@ -98,3 +98,11 @@ func (repo *SnackRepository) LikeSnack(db *gorm.DB, id int, value int) (snack do
 	db.Save(&snack)
 	return snack, nil
 }
+
+
+// お菓子Top10を返すAPI
+func (repo *SnackRepository) RankingSnack(db *gorm.DB) (snacks []domain.Snack, err error) {
+	// Top10
+	db.Limit(10).Order("likes desc").Find(&snacks)
+	return snacks, nil
+}
