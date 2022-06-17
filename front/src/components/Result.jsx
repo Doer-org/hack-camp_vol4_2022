@@ -16,7 +16,7 @@ export const Result = () => {
       </section>
 
       {/* okashi results */}
-      <section className="text-black">
+      <section className="text-gray-900">
         <div className="container sm:px-5 sm:py-24 mx-auto">
           <div className="flex flex-col sm:flex-col md:flex-warp lg:flex-row">
 
