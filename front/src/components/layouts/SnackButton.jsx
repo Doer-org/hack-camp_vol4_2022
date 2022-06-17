@@ -13,7 +13,7 @@ export const SnackButton = () => {
       >
         <button
             className='
-                lg:mt-12 mt-2 
+                lg:mt-12 mt-6
                 shadow-lg 
                 lg:px-6 lg:py-4 px-3 py-3
                 bg-blue-400

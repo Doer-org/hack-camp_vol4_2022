@@ -1,5 +1,6 @@
 import "../../styles/App.css";
 import {Navbar} from "./Navbar"
+import { SnackButton } from "./SnackButton";
 
 export const Header = () => {
   return (
@@ -16,6 +17,7 @@ export const Header = () => {
             <p className="lg:text-2xl text-base text-white font-light text-center mb-4">
                 aaaaaaaaaaaaaaaaa
             </p>
+            <SnackButton />
         </div>
     </div>
   );
