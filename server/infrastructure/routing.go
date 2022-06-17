@@ -2,9 +2,11 @@ package infrastructure
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/Doer-org/hack-camp_vol4_2022/server/interfaces/controllers"
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 )
 
 type Routing struct {
@@ -13,11 +15,40 @@ type Routing struct {
 	Port string
 }
 
+func newGin() *gin.Engine {
+	server := gin.Default()
+	server.Use(cors.New(cors.Config{
+		AllowOrigins: []string{
+			"http://localhost:3000",
+			// "deploy url",
+		},
+		AllowMethods: []string{
+			"POST",
+			"GET",
+			"OPTIONS",
+			"PUT",
+			"DELETE",
+		},
+		// 許可したいHTTPリクエストヘッダの一覧
+		AllowHeaders: []string{
+			"Access-Control-Allow-Headers",
+			"Content-Type",
+			"Content-Length",
+			"Accept-Encoding",
+			"X-CSRF-Token",
+			"Authorization",
+		},
+		// preflightリクエストの結果をキャッシュする時間
+		MaxAge: 24 * time.Hour,
+	}))
+	return server
+}
+
 func NewRouting(db *DB) *Routing {
 	c := NewConfig()
 	r := &Routing{
 		DB:   db,
-		Gin:  gin.Default(),
+		Gin:  newGin(),
 		Port: c.Routing.Port,
 	}
 	r.setRouting()
