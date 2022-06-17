@@ -3,12 +3,13 @@
 
 --テーブルを作成
 CREATE TABLE "snacks" (
-  "id"      SERIAL NOT NULL, 
-  "name"    VARCHAR(255) NOT NULL,
-  "price"   INTEGER NOT NULL,
-  "img_url" VARCHAR(255) NOT NULL,
-  "detail"    VARCHAR(255) NOT NULL,
-  "likes"   INTEGER NOT NULL,
+  "id"       SERIAL NOT NULL, 
+  "name"     VARCHAR(255) NOT NULL,
+  "price"    INTEGER NOT NULL,
+  "img_url"  VARCHAR(255) NOT NULL,
+  "detail"   VARCHAR(255) NOT NULL,
+  "likes"    INTEGER NOT NULL,
+  "flavor"   INTEGER NOT NULL,
   PRIMARY KEY("id")
 );
 

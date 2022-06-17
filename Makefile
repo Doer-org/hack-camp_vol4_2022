@@ -1,5 +1,6 @@
-DB_NAME:=psql-db
-SCRAPING_NAME:=python-scraping
+DB_CONTAINER_NAME:=psql-db
+SCRAPING_CONTAINER_NAME:=python-scraping
+DATA_CONTAINER_NAME:=python-data
 RM := rm -rf
 DATA_DIR:=./db/data
 
@@ -60,7 +61,13 @@ down:
 restart: down start
 
 attach-db:
-	docker exec -it $(DB_NAME) /bin/bash
+	docker exec -it $(DB_CONTAINER_NAME) /bin/bash
+
+attach-sc:
+	docker exec -it $(SCRAPING_CONTAINER_NAME) /bin/bash
+
+attach-da:
+	docker exec -it $(DATA_CONTAINER_NAME) /bin/bash
 
 del-cache:
 	@echo ""

@@ -1,14 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
 from utils.trim import shape_price
-from db.conn import connect_to_db,disconnect_to_db
 import time
+import math
+
+# db関連
+from db.insert import insert_db
+
+# pandas関連
+from data.df import df_init,df_append,df_save_to_csv
 
 
 # ファミリーマートの商品情報ページからデータをスクレイピングする
 def scraping():
 
     time.sleep(2)
+
+    df = df_init()
 
     get_data_length = 200
     for i in range(1, get_data_length + 1):
@@ -36,25 +44,17 @@ def scraping():
 
             # データ整形
             price = shape_price(price)
+            price = math.floor(price * 1.08)
             base_img_url = "https://www.family.co.jp"
             img_url = base_img_url + img['src']
 
+            # dbに挿入
+            # insert_db(name,price,img_url,detail)
 
-            # db接続とデータの挿入
-            conn = connect_to_db()
-            cur = conn.cursor()
+            # pandas
+            df = df_append(df,name,price,img_url,detail)
 
-            insert_sql = f"\
-                INSERT INTO snacks (name,price,img_url,detail,likes) \
-                VALUES ('{name}','{price}','{img_url}','{detail}', 0);\
-            "
-
-            cur.execute(insert_sql)
-            conn.commit()
-
-            cur.close()
-
-            disconnect_to_db(conn)
+            df_save_to_csv(df, path="data/csv/snack.csv")
 
             print("ok")
 
