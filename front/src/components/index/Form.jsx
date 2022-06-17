@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export const Form = () => {
 
-
     const [emotion, setEmotion] = useState("");
     const [price, setPrice] = useState(1000);
 
@@ -19,8 +18,6 @@ export const Form = () => {
         <div className="
                 mx-auto
                 text-center
-                
-
                 mt-14 sm:mt-20 md:mt-24 lg:mt-44 
                 mx-3 sm:mx-16 md:mx-32 lg:mx-70 
                 rounded-2xl 
