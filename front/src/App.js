@@ -3,6 +3,7 @@ import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Ranking } from "./components/Ranking";
+import { About } from "./components/About";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Result } from "./components/Result";
 
@@ -15,7 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Form />} />
             <Route path="/rank" element={<Ranking />} />
-          </Routes>          
+            <Route path="/about" element={<About />} />
+          </Routes>
         </div>
         <Result/>
         <Footer />
