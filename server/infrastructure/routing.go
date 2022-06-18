@@ -57,6 +57,7 @@ func NewRouting(db *DB) *Routing {
 
 func (r *Routing) setRouting() {
 	snackController := controllers.NewSnackController(r.DB)
+	ramenController := controllers.NewRamenController(r.DB)
 
 	// 指定したidのお菓子を取得するAPI
 	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.FindByID(c) })
@@ -74,6 +75,8 @@ func (r *Routing) setRouting() {
 	// お菓子を全部返すAPI
 	r.Gin.GET("/snack/all", func(c *gin.Context) { snackController.AllSnack(c) })
 
+	// らーめんを1つ返すAPI
+	r.Gin.GET("/ramen/random", func(c *gin.Context) { ramenController.GetRandom(c) })
 
 }
 
