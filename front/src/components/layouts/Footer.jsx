@@ -30,7 +30,7 @@ export const Footer = () => {
                 </div>
                 <div>
                   <a href="https://github.com/mahiro72">
-                  <img className="max-h-10 max-w-10 rounded-full" src="https://images-ext-1.discordapp.net/external/XDdgWt7CNuE1HKb65ApWRvnOK6yPYPkQBkY8CQBD63Y/https/prtimes.jp/i/14901/40/ogp/d14901-40-386781-0.jpg"></img>
+                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
              
