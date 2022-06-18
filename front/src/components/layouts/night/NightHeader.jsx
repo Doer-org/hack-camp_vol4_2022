@@ -14,9 +14,6 @@ export const NightHeader = () => {
         <p className="lg:text-3xl font-normal text-base text-white text-center pt-3 pb-8">
           ラーメンを愛するすべての人たちへ
         </p>
-        <p className="lg:text-3xl font-normal text-base text-white text-center pt-3 pb-8">
-          愛さない人も
-        </p>
         <p className="lg:text-2xl text-base text-white font-light text-center mb-4">
           「見つける」ボタンであなたと夜を共に過ごすラーメンを見つけましょう
           <br />
