@@ -1,5 +1,5 @@
 build:
   docker:
-    web: Dockerfile
+    front: front/Dockerfile
 run:
-  web: /server
+  front: sh -c "cd /app/front && npm install && npm start"
