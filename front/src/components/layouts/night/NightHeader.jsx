@@ -18,9 +18,9 @@ export const NightHeader = () => {
           愛さない人も
         </p>
         <p className="lg:text-2xl text-base text-white font-light text-center mb-4">
-          「見つける」ボタンであなたと夜を共に過ごすラーメンを見つけましょう。
+          「見つける」ボタンであなたと夜を共に過ごすラーメンを見つけましょう
           <br />
-          ラーメンがあなたの夜を充実させます。
+          ラーメンがあなたの夜を充実させます
         </p>
         <NightRamenButton />
       </div>
