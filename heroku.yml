@@ -2,5 +2,5 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  web: go run main.go
+  web: ls
   # web: pwd
