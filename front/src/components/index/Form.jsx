@@ -177,10 +177,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg m-auto
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100 
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100 
                                     "
                 >
                   500
@@ -200,10 +200,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   1000
@@ -223,10 +223,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   1500
@@ -246,10 +246,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   2000
