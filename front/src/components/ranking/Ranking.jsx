@@ -1,30 +1,41 @@
-import snack from "../../data/images/snack.jpeg";
-import heart from "../../data/images/heart.png";
+import { useState, useEffect } from "react";
+import { RankSnack } from "./RankSnack";
+import { RankTitle } from "./RankTitle";
+import axios from "axios";
 
 export const Ranking = () => {
+
+  const [ranking, setRanking] = useState([])
+
+  const getRanking = () => {
+    axios
+      .get(`http://localhost:8000/snack/ranking`)
+      .then((data) => {
+        const resRank = data.data.data
+        console.log(resRank)
+        setRanking(resRank)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  useEffect(() => {
+    getRanking()
+    console.log("hello")
+  }, []);
+
+
   return (
+
+
     <div>
-      <div className="flex justify-center my-10">
-        <p className="sm:text-5xl my-auto sm:p-6 text-base p-3">1</p>
-        <div className="border flex justify-center rounded-lg border-r shadow-lg">
-          <img
-            src={snack}
-            alt="お菓子おみくじロゴ"
-            className="sm:h-32 sm:w-32 h-16 w-16 border-r rounded-l-lg"
-          />
-          <p className="test-base w-32 mx-3 sm:text-2xl sm:w-64 my-auto sm:mx-6">
-            商品名
-          </p>
-          <img
-            src={heart}
-            alt="いいね"
-            className="w-5 h-5 sm:w-8 sm:h-8 m-auto"
-          />
-          <p className="test-base w-6 mx-2 sm:text-2xl sm:w-12 my-auto sm:mx-4">
-            32
-          </p>
-        </div>
-      </div>
+        <RankTitle />
+      {
+        ranking.map((rankSnack,idx) => {
+          return <RankSnack rankSnackInfo={rankSnack} key={idx}/>
+        })
+      }
     </div>
   );
 };
