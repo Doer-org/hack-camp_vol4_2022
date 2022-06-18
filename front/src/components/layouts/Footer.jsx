@@ -9,8 +9,8 @@ import hikari from "../../data/images/hikari.jpeg";
 export const Footer = () => {
 
   return (
-    <footer className="text-gray-600 title">
-      <div className="container px-5 py-10 mx-auto">
+    <footer className="text-gray-600 title bg-gray-50 shadow-inner">
+      <div className="container px-5 py-10 my-30 mx-auto">
         <footer className="text-center">
 
           <div className="w-full px-4">
@@ -25,15 +25,15 @@ export const Footer = () => {
                 <div className="py-2">mahiro72（Backend）</div>
                 <div>
                   <a href="https://twitter.com/sino0042900">
-                  <img className="max-h-10 max-w-10" src={twitter}></img>
+                    <img className="max-h-10 max-w-10" src={twitter}></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://github.com/mahiro72">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                    <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
-             
+
               </div>
 
               {/* kengo */}
@@ -44,12 +44,12 @@ export const Footer = () => {
                 <div className="py-2">nisi0929（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/donennnn">
-                  <img className="max-h-10 max-w-10" src={twitter}></img>
+                    <img className="max-h-10 max-w-10" src={twitter}></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://github.com/nisi0929">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                    <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
               </div>
@@ -62,16 +62,16 @@ export const Footer = () => {
                 <div className="py-2">Meow520（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/cat_d_cis">
-                  <img className="max-h-10 max-w-10" src={twitter}></img>
+                    <img className="max-h-10 max-w-10" src={twitter}></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://github.com/Meow520">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                    <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
               </div>
-              
+
               {/* kai */}
               <div className="flex justify-center gap-4 py-3">
                 <div>
@@ -80,12 +80,12 @@ export const Footer = () => {
                 <div className="py-2">kai-0307（Backend）</div>
                 <div>
                   <a href="https://twitter.com/midnightsun0307">
-                  <img className="max-h-10 max-w-10" src={twitter}></img>
+                    <img className="max-h-10 max-w-10" src={twitter}></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://github.com/kai-0307">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                    <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
               </div>
@@ -98,12 +98,12 @@ export const Footer = () => {
                 <div className="py-2">hikari-8（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/hikari_pint">
-                  <img className="max-h-10 max-w-10" src={twitter}></img>
+                    <img className="max-h-10 max-w-10" src={twitter}></img>
                   </a>
                 </div>
                 <div>
                   <a href="https://github.com/hikari-8">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                    <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
                   </a>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export const Footer = () => {
           </div>
         </footer>
       </div>
-      <div className="footer mt-10">
+      <div className="footer">
         <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <span className="ml-3 text-white text-xl font-semibold title">OKASHI OMIKUZI</span>
