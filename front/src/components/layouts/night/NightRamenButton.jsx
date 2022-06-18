@@ -9,13 +9,13 @@ export const NightRamenButton = () => {
                 lg:mt-12 mt-6
                 shadow-lg 
                 lg:px-6 lg:py-4 px-3 py-3
-                bg-blue-400
-                text-lg text-white font-semibold 
-                rounded  hover:bg-blue-500 hover:shadow-sm hover:translate-y-0.5
+                bg-slate-800
+                text-base md:text-lg text-white font-semibold 
+                rounded  hover:bg-slate-600 hover:shadow-sm hover:translate-y-0.5
                 transform transition
             "
       >
-        今すぐラーメンに出会うしかないよ！！？？？🍜🍜
+        ラーメンが呼んでいる🍜🍜
       </Link>
     </div>
   );

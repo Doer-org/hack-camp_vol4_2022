@@ -2,7 +2,7 @@
   position: absolute;
   align-items: flex-end;
   width: 30px;
-  height:30px;
+  height: 30px;
   right: 20px;
   top: 20px;
 }
@@ -27,7 +27,7 @@
 }
 
 .bm-burger-bars-hover {
-  background: #ffe4b5;
+  background: #f8c0af;
 }
 
 .bm-menu-wrap {
@@ -62,6 +62,6 @@
   top: 0;
 }
 
-.menu-item {
+.menu-items {
   color: #ff8700;
 }

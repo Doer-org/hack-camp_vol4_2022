@@ -24,10 +24,11 @@ function App() {
           // 00:00 ~ 02:00
           // サイトが変貌します.........🔥🍜
           // テスト用
-          // 0 <= nowHours && nowHours <= 24 ?
+
+          //   0 <= nowHours && nowHours <= 24 ? (
           0 <= nowHours && nowHours <= 2 ? (
             <>
-              <div>
+              <div className="bg-slate-800">
                 <NightHeader />
                 <Routes>
                   <Route path="/" element={<NightHome />} />
@@ -35,8 +36,8 @@ function App() {
                   <Route path="/about" element={<NightAbout />} />
                   <Route path="/snackList" element={<NightNotFound />} />
                 </Routes>
+                <NightFooter />
               </div>
-              <NightFooter />
             </>
           ) : (
             <>

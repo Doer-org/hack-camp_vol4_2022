@@ -14,14 +14,14 @@ export const NightNavbar = () => {
 
       <Link
         to="/about"
-        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
+        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right hover:text-red-200"
       >
         About
       </Link>
 
       <Link
         to="/"
-        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
+        className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right hover:text-red-200"
       >
         Home
       </Link>
