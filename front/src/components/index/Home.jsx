@@ -36,17 +36,19 @@ const Home = () => {
           <div>aaa</div>
         )
       ) : (
-        <div className="py-10">
-          <Form
-            handleSubmit={handleSubmit}
-            emotion={emotion}
-            price={price}
-            setEmotion={setEmotion}
-            setPrice={setPrice}
-          />
-        </div>
+        <>
+            <div className="py-10">
+            <Form
+                handleSubmit={handleSubmit}
+                emotion={emotion}
+                price={price}
+                setEmotion={setEmotion}
+                setPrice={setPrice}
+            />
+            </div>
+            <Member />
+        </>
       )}
-    <Member />
     </div>
   );
 };
