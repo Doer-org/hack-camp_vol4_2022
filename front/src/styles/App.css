@@ -1,9 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Zen+Maru+Gothic&display=swap');
 
 .main-color {
+  font-family: "Zen Maru Gothic", sans-serif;
   background-color: #ff8700;
+}
+
+.title {
+  font-family: 'Varela Round', sans-serif;
 }
 
 .results {
@@ -13,4 +19,3 @@
 #submit_bg {
   background-color: #ff8700;
 }
-
