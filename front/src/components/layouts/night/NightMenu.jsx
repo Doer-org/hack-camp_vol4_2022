@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { push as Menu } from "react-burger-menu";
-import "../../../assets/humberger.css";
+import "../../../assets/nighthumberger.css";
 
 export default (props) => {
   const [isOpen, setOpen] = useState(false);
@@ -22,7 +22,7 @@ export default (props) => {
     >
       <Link
         to="/"
-        className="menu-item text-base sm:text-2xl py-3 "
+        className="menu-item text-base sm:text-2xl py-3 hover:bg-red-100"
         onClick={closeSideBar}
       >
         Home
@@ -30,7 +30,7 @@ export default (props) => {
 
       <Link
         to="/about"
-        className="menu-item text-base sm:text-2xl py-3"
+        className="menu-item text-base sm:text-2xl py-3 hover:bg-red-100"
         onClick={closeSideBar}
       >
         About

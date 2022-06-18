@@ -14,49 +14,49 @@ import { NightHeader } from "./components/layouts/night/NightHeader";
 import { NightFooter } from "./components/layouts/night/NightFooter";
 
 function App() {
-    // 時間取得
-    let nowHours = new Date().getHours()
+  // 時間取得
+  let nowHours = new Date().getHours();
 
-    return (
+  return (
     <div className="App">
-        <BrowserRouter>
+      <BrowserRouter>
         {
-            // 00:00 ~ 02:00
-            // サイトが変貌します.........🔥🍜
-            // テスト用 
-            // 0 <= nowHours && nowHours <= 24 ?
-            (0 <= nowHours && nowHours <= 2) ?
+          // 00:00 ~ 02:00
+          // サイトが変貌します.........🔥🍜
+          // テスト用
+          0 <= nowHours && nowHours <= 24 ? (
+            // (0 <= nowHours && nowHours <= 2) ?
             <>
-                <div>
-                    <NightHeader />
-                    <Routes>
-                        <Route path="/" element={<NightHome />} />
-                        <Route path="/ranking" element={<NightNotFound/>} />
-                        <Route path="/about" element={<NightAbout />} />
-                        <Route path="/snackList" element={<NightNotFound/>} />
+              <div className="bg-slate-800">
+                <NightHeader />
+                <Routes>
+                  <Route path="/" element={<NightHome />} />
+                  <Route path="/ranking" element={<NightNotFound />} />
+                  <Route path="/about" element={<NightAbout />} />
+                  <Route path="/snackList" element={<NightNotFound />} />
+                </Routes>
 
-                    </Routes>
-                </div>
                 <NightFooter />
+              </div>
             </>
-            :
+          ) : (
             <>
-                <div>
-                    <Header />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/ranking" element={<Ranking />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/snackList" element={<SnackList/>} />
-                    </Routes>
-                </div>
-                <Footer />
+              <div>
+                <Header />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/ranking" element={<Ranking />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/snackList" element={<SnackList />} />
+                </Routes>
+              </div>
+              <Footer />
             </>
+          )
         }
-           
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
-    );
+  );
 }
 
 export default App;
