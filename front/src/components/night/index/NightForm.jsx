@@ -1,10 +1,9 @@
-import "../../styles/App.css";
+import "../../../styles/App.css";
 import React from "react";
 import { useState } from "react";
 
 
-
-export const Form = () => {
+export const NightForm = () => {
 
     const [emotion, setEmotion] = useState("");
     const [price, setPrice] = useState(1000);
@@ -30,7 +29,7 @@ export const Form = () => {
                 py-4 md:py-6 lg:py-8 
                 rounded-tl-xl rounded-tr-xl
                 shadow-1xl
-                main-color
+                night-color
             ">
             お菓子を見つける
         </p>
