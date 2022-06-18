@@ -2,5 +2,4 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  web: cd ~ && pwd && ls
-  # web: pwd
+  web: go run main.go
