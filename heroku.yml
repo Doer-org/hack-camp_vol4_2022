@@ -2,4 +2,4 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  web: /go/src/github.com/Doer-org/hack-camp_vol4_2022/main
+  web: go run /go/src/github.com/Doer-org/hack-camp_vol4_2022/main.go
