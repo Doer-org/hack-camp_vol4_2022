@@ -2,13 +2,13 @@ import "../../styles/App.css";
 import React from "react";
 import { useState } from "react";
 
-export const Form = () => {
-  const [emotion, setEmotion] = useState("");
-  const [price, setPrice] = useState(1000);
-
-  const handleSubmit = () => {
-    console.log(emotion, price);
-  };
+export const Form = ({
+    handleSubmit,
+    emotion,
+    price,
+    setEmotion,
+    setPrice
+}) => {
 
   return (
     <div className="lg:max-w-5xl w-full mx-auto">
@@ -47,7 +47,7 @@ export const Form = () => {
                     checked={emotion === "happy"}
                     readOnly
                     type="radio"
-                    name="option"
+                    name="option1"
                     id="option1"
                     className="hidden peer"
                     onClick={() => {
@@ -72,7 +72,7 @@ export const Form = () => {
                     checked={emotion === "sad"}
                     readOnly
                     type="radio"
-                    name="option"
+                    name="option1"
                     id="option1"
                     className="hidden peer"
                     onClick={() => {
@@ -97,7 +97,7 @@ export const Form = () => {
                     checked={emotion === "angry"}
                     readOnly
                     type="radio"
-                    name="option"
+                    name="option1"
                     id="option1"
                     className="hidden peer"
                     onClick={() => {
@@ -122,7 +122,7 @@ export const Form = () => {
                     checked={emotion === "normal"}
                     readOnly
                     type="radio"
-                    name="option"
+                    name="option1"
                     id="option1"
                     className="hidden peer"
                     onClick={() => {
@@ -175,11 +175,10 @@ export const Form = () => {
             <div className="md:justify-center w-full border-y-4 md:border-0 md:flex">
               <label className="mx-1">
                 <input
-                  checked={price === 500}
                   readOnly
                   type="radio"
-                  name="option"
-                  id="option1"
+                  name="option2"
+                  id="option2"
                   className="hidden peer"
                   onClick={() => {
                     setPrice(500);
@@ -199,11 +198,10 @@ export const Form = () => {
 
               <label className="mx-1">
                 <input
-                  checked={price === 1000}
                   readOnly
                   type="radio"
-                  name="option"
-                  id="option1"
+                  name="option2"
+                  id="option2"
                   className="hidden peer"
                   onClick={() => {
                     setPrice(1000);
@@ -223,11 +221,10 @@ export const Form = () => {
 
               <label className="mx-1">
                 <input
-                  checked={price === 1500}
                   readOnly
                   type="radio"
-                  name="option"
-                  id="option1"
+                  name="option2"
+                  id="option2"
                   className="hidden peer"
                   onClick={() => {
                     setPrice(1500);
@@ -247,11 +244,10 @@ export const Form = () => {
 
               <label className="mx-1">
                 <input
-                  checked={price === 2000}
                   readOnly
                   type="radio"
-                  name="option"
-                  id="option1"
+                  name="option2"
+                  id="option2"
                   className="hidden peer"
                   onClick={() => {
                     setPrice(2000);
@@ -276,7 +272,7 @@ export const Form = () => {
         <div className="pb-4">
           <button
             type="submit"
-            onClick={handleSubmit}
+            onClick={()=>{handleSubmit(price,emotion)}}
             className="
                         submit button rounded-md
                         md:font-semibold text-base 
