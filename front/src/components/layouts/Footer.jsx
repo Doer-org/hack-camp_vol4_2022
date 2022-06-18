@@ -1,6 +1,6 @@
 import "../../styles/App.css";
 import twitter from "../../data/images/twitter_logo.png";
-import github from "../../data/images/git_logo.png";
+import github from "../../data/images/git-logo.jpg";
 import mahiro from "../../data/images/mahiro.png";
 import kengo from "../../data/images/kengo.png";
 import mao from "../../data/images/mao.jpeg";
@@ -18,11 +18,11 @@ export const Footer = () => {
 
             <div className="py-2 text-gray-600 hover:text-gray-800 flex-col object-center">
               {/* mahiro */}
-              <div className="flex justify-center gap-1 py-3">
+              <div className="flex justify-center gap-4 py-3">
                 <div>
                   <img className="max-h-10 max-w-10 rounded-full" src={mahiro}></img>
                 </div>
-                <div className="py-2">mahiro72</div>
+                <div className="py-2">mahiro72（Backend）</div>
                 <div>
                   <a href="https://twitter.com/sino0042900">
                   <img className="max-h-10 max-w-10" src={twitter}></img>
@@ -30,18 +30,18 @@ export const Footer = () => {
                 </div>
                 <div>
                   <a href="https://github.com/mahiro72">
-                  <img className="max-h-10 max-w-10 rounded-full" src={github}></img>
+                  <img className="max-h-10 max-w-10 rounded-full" src="https://images-ext-1.discordapp.net/external/XDdgWt7CNuE1HKb65ApWRvnOK6yPYPkQBkY8CQBD63Y/https/prtimes.jp/i/14901/40/ogp/d14901-40-386781-0.jpg"></img>
                   </a>
                 </div>
              
               </div>
 
               {/* kengo */}
-              <div className="flex justify-center gap-2 py-3">
+              <div className="flex justify-center gap-5 py-3">
                 <div>
                   <img className="max-h-10 max-w-10 rounded-full" src={kengo}></img>
                 </div>
-                <div className="py-2">nisi0929</div>
+                <div className="py-2">nisi0929（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/donennnn">
                   <img className="max-h-10 max-w-10" src={twitter}></img>
@@ -55,11 +55,11 @@ export const Footer = () => {
               </div>
 
               {/* mao */}
-              <div className="flex justify-center gap-1 py-3">
+              <div className="flex justify-center gap-4 py-3">
                 <div>
                   <img className="max-h-10 max-w-10 rounded-full" src={mao}></img>
                 </div>
-                <div className="py-2">Meow520</div>
+                <div className="py-2">Meow520（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/cat_d_cis">
                   <img className="max-h-10 max-w-10" src={twitter}></img>
@@ -73,11 +73,11 @@ export const Footer = () => {
               </div>
               
               {/* kai */}
-              <div className="flex justify-center gap-1 py-3">
+              <div className="flex justify-center gap-4 py-3">
                 <div>
                   <img className="max-h-10 max-w-10 rounded-full" src={kai}></img>
                 </div>
-                <div className="py-2">kai-0307</div>
+                <div className="py-2">kai-0307（Backend）</div>
                 <div>
                   <a href="https://twitter.com/midnightsun0307">
                   <img className="max-h-10 max-w-10" src={twitter}></img>
@@ -91,11 +91,11 @@ export const Footer = () => {
               </div>
 
               {/* hikari */}
-              <div className="flex justify-center gap-2 py-3">
+              <div className="flex justify-center gap-5 py-3">
                 <div>
                   <img className="max-h-10 max-w-10 rounded-full" src={hikari}></img>
                 </div>
-                <div className="py-2">hikari-8</div>
+                <div className="py-2">hikari-8（Frontend）</div>
                 <div>
                   <a href="https://twitter.com/hikari_pint">
                   <img className="max-h-10 max-w-10" src={twitter}></img>
