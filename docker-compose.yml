@@ -23,7 +23,7 @@ services:
       - 8000:8000
     tty: true
     volumes:
-      - ./server:/go/src/app
+      - ./server:/go/src/github.com/Doer-org/hack-camp_vol4_2022/server
     depends_on:
       - db
     command:
