@@ -97,6 +97,24 @@ make doer
 ```
 
 <br>
+       
+## deploy
+       
+### backend heroku (branch: release)
+
+herokuでserver以下をデプロイしてます
+
+```
+git subtree push --prefix server/ heroku master
+```
+
+<br>
+       
+### frontend vercel (branch: release-front)
+
+vercelでfront以下をデプロイしてます
+
+<br>
 
 
 ## reference
