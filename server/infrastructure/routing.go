@@ -2,11 +2,12 @@ package infrastructure
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/Doer-org/hack-camp_vol4_2022/server/interfaces/controllers"
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 type Routing struct {
@@ -83,7 +84,7 @@ func (r *Routing) setRouting() {
 func (r *Routing) Run() {
 	port := fmt.Sprintf(
 		":%s",
-		r.Port,
+		os.Getenv("PORT"),
 	)
 	r.Gin.Run(port)
 }

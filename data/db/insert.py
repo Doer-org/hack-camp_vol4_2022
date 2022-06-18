@@ -1,8 +1,14 @@
-from db.conn import connect_to_db,disconnect_to_db
+from db.conn import connect_to_db,disconnect_to_db,connect_to_herokudb
+from settings.settings import DEPLOY_FLAG
 
 def insert_db(name,price,img_url,detail,flavor):
     # db接続とデータの挿入
-    conn = connect_to_db()
+    conn = None
+    if DEPLOY_FLAG:
+        conn = connect_to_herokudb()
+    else:
+        conn = connect_to_db()
+
     cur = conn.cursor()
 
     insert_sql = f"\
@@ -20,7 +26,12 @@ def insert_db(name,price,img_url,detail,flavor):
 
 def insert_ramen_db(name,price,img_url,detail):
     # db接続とデータの挿入
-    conn = connect_to_db()
+    conn = None
+    if DEPLOY_FLAG:
+        conn = connect_to_herokudb()
+    else:
+        conn = connect_to_db()
+
     cur = conn.cursor()
 
     insert_sql = f"\
