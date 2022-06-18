@@ -2,6 +2,7 @@ package infrastructure
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -29,7 +30,7 @@ func NewDB() *DB {
 }
 
 func newDB(d *DB) *DB {
-	// DB接続情報
+	// DB接続情報 local
 	connInfo := fmt.Sprintf(
 		"user=%s password=%s host=%s port=%s dbname=%s sslmode=disable",
 		d.Username,
@@ -38,6 +39,11 @@ func newDB(d *DB) *DB {
 		d.Port,
 		d.DBName,
 	)
+
+	// deploy
+	if os.Getenv("DEPLOY_FLAG") == "True"{
+		connInfo = os.Getenv("DATABASE_URL")
+	}
 
 	db, err := gorm.Open("postgres", connInfo)
 
