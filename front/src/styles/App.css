@@ -21,6 +21,12 @@
 }
 
 
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+} 
+
 .night-color {
   font-family: "Zen Maru Gothic", sans-serif;
   background-color: #a10d03;
