@@ -8,7 +8,7 @@ export const SnackList = () => {
 
   const getSnackList = () => {
     axios
-      .get(`http://localhost:8000/snack/all`)
+      .get(`https://server-doer.herokuapp.com/snack/all`)
       .then((data) => {
         const resData = data.data.data;
         setSnackList(resData);

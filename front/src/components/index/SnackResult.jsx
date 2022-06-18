@@ -8,7 +8,7 @@ export const SnackResult = ({ snackInfo, iine }) => {
   // いいね数更新用
   const updateSnackLikes = (id, iine) => {
     axios
-      .get(`http://localhost:8000/snack/like/${id}?value=${iine}`)
+      .get(`https://server-doer.herokuapp.com/snack/like/${id}?value=${iine}`)
       .then((data) => {
         // console.log("success")
       })
