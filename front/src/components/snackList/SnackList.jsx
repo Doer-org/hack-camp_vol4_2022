@@ -23,7 +23,7 @@ export const SnackList = () => {
   }, []);
 
   return (
-    <div>
+    <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-2 md:mx-5">
       {snackList.map((snack, idx) => {
         return <Snack snackInfo={snack} key={idx} />;
       })}
