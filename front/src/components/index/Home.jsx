@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Result } from "./Result";
 import { Form } from "./Form";
+import Member from "./Member";
 
 const Home = () => {
   const [isResult, setIsResult] = useState(false);
@@ -45,6 +46,7 @@ const Home = () => {
           />
         </div>
       )}
+    <Member />
     </div>
   );
 };
