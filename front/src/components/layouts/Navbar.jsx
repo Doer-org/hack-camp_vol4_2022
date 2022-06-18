@@ -16,7 +16,7 @@ export const Navbar = () => {
         to="/snackList"
         className="text-white lg:inline hidden text-2xl px-4 py-6 mx-0 float-right"
       >
-        snacks
+        Snacks
       </Link>
     
       <Link
