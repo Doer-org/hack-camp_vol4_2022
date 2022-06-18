@@ -11,9 +11,8 @@ export const Form = ({
     <div className="lg:max-w-5xl w-full mx-auto">
       <div
         className="
-                mx-auto
                 text-center
-                mt-14 sm:mt-20 md:mt-24 lg:mt-44 sm:mx-16 md:mx-32 lg:mx-70 
+                mt-14 sm:mt-20 md:mt-24 lg:mt-5 mx-3 md:mx-16 lg:mx-28
                 rounded-2xl 
                 shadow-2xl
                 "
