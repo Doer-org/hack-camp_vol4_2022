@@ -22,6 +22,14 @@
 
 
 .night-color {
-    font-family: "Zen Maru Gothic", sans-serif;
-    background-color: #a10d03;
-  }
+  font-family: "Zen Maru Gothic", sans-serif;
+  background-color: #a10d03;
+}
+
+.ranking {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ranking_sentence {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
