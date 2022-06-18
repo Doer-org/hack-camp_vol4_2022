@@ -8,7 +8,7 @@ export const Ranking = () => {
 
   const getRanking = () => {
     axios
-      .get(`http://localhost:8000/snack/ranking`)
+      .get(`https://server-doer.herokuapp.com/snack/ranking`)
       .then((data) => {
         const resRank = data.data.data;
         setRanking(resRank)

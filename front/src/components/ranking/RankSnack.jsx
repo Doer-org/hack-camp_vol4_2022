@@ -12,7 +12,7 @@ export const RankSnack = ({ rankSnackInfo, index }) => {
 
     const updateSnackLikes = (id) => {
         axios
-            .get(`https://localhost:8000/snack/like/${id}`)
+            .get(`https://server-doer.herokuapp.com/snack/like/${id}`)
             .then((deta) => {
             })
             .catch((err) => {

@@ -10,7 +10,7 @@ const Snack = ({ snackInfo }) => {
   // いいね数更新用
   const updateSnackLikes = (id) => {
     axios
-      .get(`http://localhost:8000/snack/like/${id}`)
+      .get(`https://server-doer.herokuapp.com/snack/like/${id}`)
       .then((data) => {
         // console.log("success")
       })
