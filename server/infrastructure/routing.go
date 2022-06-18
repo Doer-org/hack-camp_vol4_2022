@@ -21,7 +21,7 @@ func newGin() *gin.Engine {
 	server.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
 			"http://localhost:3000",
-			// "deploy url",
+			"https://okashi-omikuzi.vercel.app",
 		},
 		AllowMethods: []string{
 			"POST",
