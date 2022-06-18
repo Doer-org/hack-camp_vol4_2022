@@ -1,23 +1,19 @@
 import "../../styles/App.css";
 import React from "react";
-import { useState } from "react";
-
 export const Form = ({
-    handleSubmit,
-    emotion,
-    price,
-    setEmotion,
-    setPrice
+  handleSubmit,
+  emotion,
+  price,
+  setEmotion,
+  setPrice,
 }) => {
-
   return (
     <div className="lg:max-w-5xl w-full mx-auto">
       <div
         className="
                 mx-auto
                 text-center
-                mt-14 sm:mt-20 md:mt-24 lg:mt-44 
-                mx-3 sm:mx-16 md:mx-32 lg:mx-70 
+                mt-14 sm:mt-20 md:mt-24 lg:mt-44 sm:mx-16 md:mx-32 lg:mx-70 
                 rounded-2xl 
                 shadow-2xl
                 "
@@ -56,11 +52,10 @@ export const Form = ({
                   />
                   <div
                     className="
-                                    peer-checked:bg-blue-300
                                     flex flex-col w-full 
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 my-4 text-3xl hover:bg-gray-100 peer-checked:bg-yellow-200
+                                    lg:py-2 lg:px-4 my-4 sm:text-3xl hover:bg-gray-100 peer-checked:bg-yellow-200
                                     "
                   >
                     😄
@@ -81,11 +76,10 @@ export const Form = ({
                   />
                   <div
                     className="
-                                    peer-checked:bg-blue-300
                                     flex flex-col w-full 
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 my-4 text-3xl hover:bg-gray-100 peer-checked:bg-blue-300
+                                   lg:py-2 lg:px-4 my-4 sm:text-3xl hover:bg-gray-100 peer-checked:bg-blue-300
                                     "
                   >
                     😭
@@ -106,11 +100,10 @@ export const Form = ({
                   />
                   <div
                     className="
-                                    peer-checked:bg-blue-300
                                     flex flex-col w-full 
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 my-4 text-3xl hover:bg-gray-100 peer-checked:bg-red-300
+                                    lg:py-2 lg:px-4 my-4 sm:text-3xl hover:bg-gray-100 peer-checked:bg-red-300
                                     "
                   >
                     😡
@@ -131,11 +124,10 @@ export const Form = ({
                   />
                   <div
                     className="
-                                    peer-checked:bg-blue-300
                                     flex flex-col w-full 
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 my-4 text-3xl hover:bg-gray-100 peer-checked:bg-green-300
+                                    lg:py-2 lg:px-4 my-4 sm:text-3xl hover:bg-gray-100 peer-checked:bg-green-300
                                     "
                   >
                     😋
@@ -153,11 +145,10 @@ export const Form = ({
             <div>
               <div
                 className="
-                                peer-checked:bg-blue-300
-                                flex flex-col w-full 
-                                max-w-lg mx-auto 
+                                flex flex-col w-3/4
+                                max-w-md mx-auto
                                 text-center border-2 rounded-2xl border-gray-200 
-                                text-3xl hover:bg-gray-100 peer-checked:bg-green-300
+                                sm:text-3xl hover:bg-gray-100 peer-checked:bg-green-300
                                 "
               >
                 <input
@@ -171,7 +162,7 @@ export const Form = ({
                 />
               </div>
             </div>
-            <br className="md:hidden"/>
+            <br className="md:hidden" />
             <div className="md:justify-center w-full border-y-4 md:border-0 md:flex">
               <label className="mx-1">
                 <input
@@ -186,10 +177,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg m-auto
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100 
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100 
                                     "
                 >
                   500
@@ -209,10 +200,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   1000
@@ -232,10 +223,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   1500
@@ -255,10 +246,10 @@ export const Form = ({
                 />
                 <div
                   className="
-                                    flex flex-col w-full 
+                                    flex flex-col w-1/2 md:w-full
                                     max-w-lg mx-auto 
                                     text-center border-2 rounded-2xl border-gray-200 
-                                    py-2 px-4 sm:my-4 text-3xl hover:bg-gray-100
+                                    py-1 px-4 sm:my-1 text-xl hover:bg-gray-100
                                     "
                 >
                   2000
@@ -272,7 +263,9 @@ export const Form = ({
         <div className="pb-4">
           <button
             type="submit"
-            onClick={()=>{handleSubmit(price,emotion)}}
+            onClick={() => {
+              handleSubmit(price, emotion);
+            }}
             className="
             main-color
                         submit button rounded-md
