@@ -1,16 +1,18 @@
 import users from "../../../data/users.json";
-import "../../../styles/about/About.css"
+import "../../../styles/about/NightAbout.css";
 
 export const NightAbout = () => {
   return (
     <div className="text-center">
-      <p className="text-xl lg:text-3xl font-bold md:my-20 my-10">About</p>
+      <p className="text-xl text-white lg:text-3xl font-bold md:my-20 my-10">
+        About
+      </p>
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-5 md:mx-32 lg:mx-32 xl:mx-80 ">
         {users.map((user, i) => {
           return (
             <div
               key={i}
-              className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center rounded-2xl shadow-2xl m-5 md:m-10 md:p-10 p-5 break-all oneArea"
+              className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center rounded-2xl shadow-slate-300 shadow-lg m-5 md:m-10 md:p-10 p-5 break-all oneArea-Night"
             >
               <img
                 src={user.image}
@@ -20,7 +22,7 @@ export const NightAbout = () => {
               <div>
                 <a
                   href={`https://github.com/${user.name}`}
-                  className="text-3xl font-medium"
+                  className="text-3xl font-medium text-white"
                 >
                   {user.name}
                 </a>

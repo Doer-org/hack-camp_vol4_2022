@@ -1,44 +1,52 @@
-import React, { useState } from 'react'
-import { Result } from './Result'
-import { Form } from './Form'
+import React, { useState } from "react";
+import { Result } from "./Result";
+import { Form } from "./Form";
 
 const Home = () => {
-    const [isResult, setIsResult] = useState(false)
+  const [isResult, setIsResult] = useState(false);
+  const [isShow, setShow] = useState(0);
+  const [emotion, setEmotion] = useState("");
+  const [price, setPrice] = useState(1000);
+  const sleep = (waitMsec) => {
+    var startMsec = new Date();
+    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+    while (new Date() - startMsec < waitMsec);
+    setShow(true);
+  };
 
-    const [emotion, setEmotion] = useState("");
-    const [price, setPrice] = useState(1000);
+  const handleSubmit = (price, emotion) => {
+    console.log(price, emotion);
+    setIsResult(true);
+    setShow(true);
+  };
 
-    const handleSubmit = (price,emotion) => {
-        console.log(price,emotion)
-        setIsResult(true)
-    }
-
-    return (
-        <div>
-            <Form 
-                handleSubmit={handleSubmit}
-                emotion={emotion}
-                price={price}
-                setEmotion={setEmotion}
-                setPrice={setPrice}
-            />
-            {
-                isResult ?
-                    <Result
-                        emotion={emotion}
-                        price={price}
-                        setEmotion={setEmotion}
-                        setPrice={setPrice}
-                    />
-                :
-                    <div
-                        className='py-24'
-                    >
-                        {/* resultが表示される前はお菓子とかおみくじの画像を標示したい */}
-                    </div>
-            }
+  return (
+    <div>
+      {isResult ? (
+        isShow ? (
+          <Result
+            emotion={emotion}
+            price={price}
+            setEmotion={setEmotion}
+            setPrice={setPrice}
+            setIsResult={setIsResult}
+          />
+        ) : (
+          <div>aaa</div>
+        )
+      ) : (
+        <div className="py-10">
+          <Form
+            handleSubmit={handleSubmit}
+            emotion={emotion}
+            price={price}
+            setEmotion={setEmotion}
+            setPrice={setPrice}
+          />
         </div>
-    )
-}
+      )}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

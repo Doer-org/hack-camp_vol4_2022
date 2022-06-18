@@ -1,10 +1,9 @@
-.oneArea {
+.oneArea-Night {
   background: linear-gradient(
     180deg,
-    #ff8700 0%,
-    #ff8700 50%,
+    #b1342b 0%,
+    #b1342b 50%,
     white 50%,
     white 100%
   );
 }
-
