@@ -1,10 +1,10 @@
 import "../../styles/App.css";
 import axios from "axios";
-// import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import { useState, useEffect } from "react";
 import { SnackResult } from "../index/SnackResult";
 import omikuzi from "../../data/omikuzi.json";
-// import animationData from "./lottie/100957-eating-cookie.json";
+import animationData from "./lottie/100957-eating-cookie.json";
 export const Result = ({
   emotion,
   price,
@@ -66,7 +66,7 @@ export const Result = ({
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    // animationData: animationData,
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -76,7 +76,7 @@ export const Result = ({
     <div>
       {loading ? (
         <div>
-          {/* <Lottie options={defaultOptions} height={250} width={250} /> */}
+          <Lottie options={defaultOptions} height={250} width={250} />
         </div>
       ) : (
         <div className="py-12">
