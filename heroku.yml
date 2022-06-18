@@ -2,5 +2,5 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  web: ls
+  web: cd ~ && pwd && ls
   # web: pwd
