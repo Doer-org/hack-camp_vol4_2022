@@ -22,7 +22,7 @@ export default (props) => {
     >
       <Link
         to="/"
-        className="menu-item text-base sm:text-2xl py-3 "
+        className="menu-items text-base sm:text-2xl py-3 hover:bg-orange-200"
         onClick={closeSideBar}
       >
         Home
@@ -30,26 +30,25 @@ export default (props) => {
 
       <Link
         to="/about"
-        className="menu-item text-base sm:text-2xl py-3"
+        className="menu-items text-base sm:text-2xl py-3 hover:bg-orange-200"
         onClick={closeSideBar}
       >
         About
-        </Link>
+      </Link>
       <Link
         to="/ranking"
-        className="menu-item text-base sm:text-2xl py-3"
+        className="menu-items text-base sm:text-2xl py-3 hover:bg-orange-200"
         onClick={closeSideBar}
       >
         Ranking
       </Link>
       <Link
         to="/snackList"
-        className="menu-item text-base sm:text-2xl py-3"
+        className="menu-items text-base sm:text-2xl py-3 hover:bg-orange-200"
         onClick={closeSideBar}
       >
         Snacks
       </Link>
-      
     </Menu>
   );
 };
