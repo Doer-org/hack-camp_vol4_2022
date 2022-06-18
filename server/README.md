@@ -13,11 +13,27 @@
 
 パラメータを指定しなければ
 
-price=1000,cnt=3とする
+price=1000,emotionとする
 
 ```
 curl http://localhost:8000/snack/random
 ```
+
+パラメータの使い方 例
+```
+curl http://localhost:8000/snack/random?price=2000&emotion=1
+```
+
+emotion param
+```go
+// emotion
+// 0 : normal
+// 1 : sad
+// 2 : angry
+// 3 : happy
+```
+
+response example
 
 ```
 {
@@ -59,6 +75,8 @@ curl http://localhost:8000/snack/random
 curl http://localhost:8000/snack/1
 ```
 
+response example
+
 ```
 {
     "message": "success",
@@ -82,6 +100,16 @@ curl http://localhost:8000/snack/1
 curl http://localhost:8000/snack/like/1
 ```
 
+いいねをまとめて更新
+
+0<=value<=100
+
+```
+curl http://localhost:8000/snack/like/1?value=100
+```
+
+response example
+
 ```
 {
     "message": "success",
@@ -96,6 +124,92 @@ curl http://localhost:8000/snack/like/1
 }
 ```
 
+
+### お菓子Top10を返すAPI
+
+
+```
+curl http://localhost:8000/snack/ranking
+```
+
+
+response example
+
+```
+{
+    "message": "success",
+    "data": [
+        {
+            "id": 2,
+            "name": "カンロ　4Dグミ　モンキーバナナ",
+            "price": 198,
+            "imgUrl": "https://www.family.co.jp/content/dam/family/goods/4727439.jpg",
+            "detail": "モンキー型はコーラ味、バナナ型はバナナ味の味わいが楽しめる立体型グミです。",
+            "likes": 0,
+            "flavor": 1
+        },
+        {
+            "id": 3,
+            "name": "森永　大粒ラムネ　うめソルト味",
+            "price": 140,
+            "imgUrl": "https://www.family.co.jp/content/dam/family/goods/4729402.jpg",
+            "detail": "粒の大きさが通常の約1.5倍の大粒ラムネです。ほんのり塩味と甘酸っぱいうめの味わいが楽しめます。",
+            "likes": 0,
+            "flavor": 3
+        },
+        {
+            "id": 4,
+            "name": "パイン　塩スイカアメ",
+            "price": 178,
+            "imgUrl": "https://www.family.co.jp/content/dam/family/goods/4733850.jpg",
+            "detail": "熊本県産のスイカ果汁を使用した、ちょっぴり塩味のきいた、ジューシーなスイカ味のキャンディです。パインアメシリーズです。",
+            "likes": 0,
+            "flavor": 3
+        },
+        .
+        .
+        .
+        略
+    ]
+}
+```
+
+<br>
+
+### お菓子Top10を返すAPI
+
+
+```
+curl http://localhost:8000/snack/all
+```
+
+
+<br>
+
+
+### らーめんを1つ返すAPI
+
+
+```
+curl http://localhost:8000/ramen/random
+```
+
+
+response example
+
+
+```
+{
+    "message": "success",
+    "data": {
+        "id": 7,
+        "name": "ソース焼そば",
+        "price": 198,
+        "imgUrl": "https://www.family.co.jp/content/dam/family/goods/3815281.jpg",
+        "detail": "ウスターソースと中濃ソースをブレンドし、ポークエキスの旨みを加えた風味豊かな焼そばソースが特徴です。別添で「からしマヨネーズ」付きです。"
+    }
+}
+```
 
 
 ## reference
