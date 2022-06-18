@@ -2,5 +2,5 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  # web: cd server && go run /go/src/github.com/Doer-org/hack-camp_vol4_2022/main.go
-  web: pwd
+  web: go run main.go
+  # web: pwd
