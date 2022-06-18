@@ -2,4 +2,4 @@ build:
   docker:
     web: ./docker/server/Dockerfile
 run:
-  web: /go/src/app
+  web: /go/src/app/main
