@@ -176,7 +176,7 @@ response example
 
 <br>
 
-### お菓子Top10を返すAPI
+### お菓子すべてを返すAPI
 
 
 ```
