@@ -1,0 +1,67 @@
+.bm-burger-button {
+    position: absolute;
+    align-items: flex-end;
+    width: 30px;
+    height:30px;
+    right: 20px;
+    top: 20px;
+  }
+  
+  @media (min-width: 1024px) {
+    .bm-burger-button {
+      display: none;
+    }
+  }
+  
+  .bm-burger-bars {
+    background: #fff;
+  }
+  
+  .bm-cross {
+    background: #000;
+  }
+  
+  .bm-cross-button {
+    padding-right: 10%;
+    margin-right: 5%;
+  }
+  
+  .bm-burger-bars-hover {
+    background: #f8c0af;
+  }
+  
+  .bm-menu-wrap {
+    position: static;
+    top: 0;
+    height: 100%;
+  }
+  
+  .bm-menu {
+    background: white;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    text-align: center;
+  }
+  
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  
+  .bm-item {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .bm-overlay {
+    background: #0000004d;
+    top: 0;
+  }
+  
+  .menu-item {
+    color: #a10d03;
+  }

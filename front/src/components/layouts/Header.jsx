@@ -15,7 +15,8 @@ export const Header = () => {
                 お菓子を愛するすべての人たちへ
             </p>
             <p className="lg:text-2xl text-base text-white font-light text-center mb-4">
-                test test test test test test test test test
+                お菓子があなたを待っている！<br />
+                今の気持ちと予算を入力してお菓子を見つけよう
             </p>
             <SnackButton />
         </div>

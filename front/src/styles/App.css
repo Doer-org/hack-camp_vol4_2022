@@ -16,9 +16,10 @@
   border-color: #ff8700;
 }
 
-#submit_bg {
-  background-color: #ff8700;
+.result-night {
+  border-color:#b1342b;
 }
+
 
 
 input[type="number"]::-webkit-outer-spin-button, 
@@ -29,7 +30,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .night-color {
   font-family: "Zen Maru Gothic", sans-serif;
-  background-color: #a10d03;
+  background-color: #b1342b;
 }
 
 .ranking {
@@ -38,4 +39,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .ranking_sentence {
   font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.footer {
+  background-color: #ff8700;
 }

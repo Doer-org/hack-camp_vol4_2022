@@ -267,6 +267,7 @@ export const Form = ({
               handleSubmit(price, emotion);
             }}
             className="
+            main-color
                         submit button rounded-md
                         md:font-semibold text-base 
                         md:text-xl lg:text-2x text-white focus:outline-none 
