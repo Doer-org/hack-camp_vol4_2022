@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const SnackButton = () => {
+export const NightRamenButton = () => {
   return (
     <div className="text-center mt-10 mb-0">
       <Link
@@ -15,7 +15,7 @@ export const SnackButton = () => {
                 transform transition
             "
       >
-        今すぐお菓子に出会う🍪🍩
+        今すぐラーメンに出会うしかないよ！！？？？🍜🍜
       </Link>
     </div>
   );
