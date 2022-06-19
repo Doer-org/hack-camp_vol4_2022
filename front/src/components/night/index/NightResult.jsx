@@ -16,6 +16,7 @@ export const NightResult = ({ setIsResult }) => {
       .get(`https://server-doer.herokuapp.com/ramen/random`)
       .then((data) => {
         const resData = data.data.data;
+        console.log(resData)
         setRamenList(resData);
       })
       .catch((err) => {
@@ -56,10 +57,16 @@ export const NightResult = ({ setIsResult }) => {
     <div className="py-12">
       <p className="text-3xl text-center text-white">おみくじ結果！！🎉</p>
       <div className="grid grid-cols-5 text-center my-5">
-        <div className="col-span-5 m-2 md:col-span-3 md:col-start-2 shadow-2xl results border-4">
-          <div className="main-color p-10">
+        <div className="col-span-5 m-2 md:col-span-3 md:col-start-2 shadow-2xl result-night border-4">
+          <div className="night-color p-10">
             <p className="text-2xl font-extrabold">{omikuziResult.luck}</p>
             <p>{omikuziResult.description}</p>
+          </div>
+
+          <div className="">
+          <div className="grid grid-cols-1 text-center py-5 bg-white">
+                  <div>金額：{ramenList.price}円</div>
+                </div>
           </div>
         </div>
       </div>
@@ -67,7 +74,7 @@ export const NightResult = ({ setIsResult }) => {
       <div className=" text-center">
         <button
           onClick={handleResult}
-          className="p-5 bg-orange-200 hover:bg-orange-500 hover:text-white rounded-2xl shadow-2xl"
+          className="p-5 bg-red-800 hover:bg-red-600 hover:text-white text-gray-200 rounded-2xl shadow-2xl"
         >
           もう一度遊ぶ
         </button>

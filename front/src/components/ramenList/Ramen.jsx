@@ -7,7 +7,7 @@ const Ramen = ({ ramenInfo }) => {
   return (
     <div className="flex justify-center my-5">
       <div 
-      className="border grid grid-cols-5 justify-center place-items-center justify-items-center rounded-lg border-r shadow-lg bg-white max-w-xl">
+      className="border grid grid-cols-4 justify-center place-items-center justify-items-center rounded-lg border-r shadow-lg bg-white max-w-xl">
         <img
           src={ramenInfo.imgUrl}
           alt="商品画像"
