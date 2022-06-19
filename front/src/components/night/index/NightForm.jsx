@@ -2,13 +2,10 @@ import "../../../styles/App.css";
 import React from "react";
 import { useState } from "react";
 
-export const NightForm = () => {
-  const [emotion, setEmotion] = useState("");
-  const [price, setPrice] = useState(1000);
-
-  const handleSubmit = () => {
-    console.log(emotion, price);
-  };
+export const NightForm = ({
+  handleSubmit
+}) => {
+  
 
   return (
     <div className="lg:max-w-5xl w-4/5 mx-auto z-10">

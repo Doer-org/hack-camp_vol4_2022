@@ -1,50 +1,91 @@
 import "../../../styles/App.css";
-export const NightResult = () => {
-  return (
-    //omikuzi
-    <>
-      {/* omikuzi results */}
-      <section className="text-black flex justify-center mt-10 md:mt-10 lg:mt-20 mx-10 md:mx-40 lg:mx-80 overflow-auto z-10">
-        <div className="container px-5 py-4 mx-auto border-8 shadow-2xl rounded-md bg-white result-night">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold">大吉</h1>
-            <p className="text-base lg:text-4xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
-              sunt.
-            </p>
-          </div>
-        </div>
-      </section>
+import axios from "axios";
+import Lottie from "react-lottie";
+import { useState, useEffect } from "react";
+import omikuzi from "../index/data/omikuzi.json";
+import Ramen from "../../ramenList/Ramen";
+import animationData from "./lottie/19411-ramen-noodles.json";
 
-      {/* okashi results */}
-      <section className="text-gray-900 z-10">
-        <div className="container sm:px-5 sm:py-24 mx-auto max-w-3xl">
-          <div className="flex flex-col sm:flex-col md:flex-warp lg:flex-row">
-            <div className="p-4 flex-1 ">
-              <div className="h-full border-4 border-slate-600 rounded-2xl overflow-auto bg-white">
-                <img
-                  className="max-w-3xl max-h-48 lg:h-52 md:h-40 w-full object-cover object-center border-b-4 border-slate-600"
-                  src="https://source.unsplash.com/random"
-                />
-                <div className="p-2 sm:p-6 ">
-                  <h1 className="title-font text-2xl lg:text-4xl font-medium text-gray-900 text-center">
-                    Name
-                  </h1>
-                  <h2 className="tracking-widest text-lg lg:text-2xl title-font font-medium text-gray-700 text-center pb-2">
-                    Cost
-                  </h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Rem qui, nisi, vitae, laboriosam quas odio velit quam non
-                    minus quo laborum. Pariatur dolorum architecto, neque
-                    suscipit corporis fugit id dolorem!
-                  </p>
+export const NightResult = ({ setIsResult }) => {
+  const [ramenList, setRamenList] = useState({});
+  const randnum = Math.floor(Math.random() * 5);
+  const omikuziResult = omikuzi[randnum];
+
+  const getRamenList = () => {
+    axios
+      .get(`https://server-doer.herokuapp.com/ramen/random`)
+      .then((data) => {
+        const resData = data.data.data;
+        console.log(resData)
+        setRamenList(resData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getRamenList();
+  }, []);
+
+  const handleResult = () => {
+    setIsResult(false);
+  };
+
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3 * 1000);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  return (
+    <div>
+      {loading ? (
+        <div>
+          <Lottie options={defaultOptions} height={250} width={250} />
+        </div>
+      ) : (
+    <div className="py-12">
+      <p className="text-3xl text-center text-white">おみくじ結果！！🎉</p>
+      <div className="grid grid-cols-5 text-center my-5">
+        <div className="col-span-5 m-2 md:col-span-3 md:col-start-2 shadow-2xl result-night border-4">
+          <div className="night-color p-10">
+            <p className="text-2xl font-extrabold">{omikuziResult.luck}</p>
+            <p>{omikuziResult.description}</p>
+          </div>
+
+          <div className="">
+          <div className="grid grid-cols-1 text-center py-5 bg-white">
+                  <div>金額：{ramenList.price}円</div>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      <div className=" text-center">
+        <button
+          onClick={handleResult}
+          className="p-5 bg-red-800 hover:bg-red-600 hover:text-white text-gray-200 rounded-2xl shadow-2xl"
+        >
+          もう一度遊ぶ
+        </button>
+      </div>
+      <div>
+        <div className=" grid grid-cols-1 gap-5 mx-2 md:mx-5  text-center">
+          <Ramen ramenInfo={ramenList} key={ramenList.id} className = ""/>;
+        </div>
+      </div>
+    </div>
+      )}
+      </div>
   );
 };
