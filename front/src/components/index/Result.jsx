@@ -32,16 +32,16 @@ export const Result = ({
     currentEmotion = 3;
   }
 
-  const setTmpSnackList = (data)=>{
+  const setTmpSnackList = (data) => {
     tmpSnackListURL = "";
-    data.map((d,idx)=>{
-        if (idx < 3){
-            tmpSnackListURL += d.name + "%0A";
-        }else if (idx == 3){
-            tmpSnackListURL += "...%0A";
-        }
-    })
-  }
+    data.map((d, idx) => {
+      if (idx < 3) {
+        tmpSnackListURL += d.name + "%0A";
+      } else if (idx == 3) {
+        tmpSnackListURL += "...%0A";
+      }
+    });
+  };
 
   const getSnackList = () => {
     axios
@@ -52,7 +52,7 @@ export const Result = ({
         const resData = data.data.data;
         setSnackList(resData);
         setTmpSnackList(resData);
-        setSnackListURL(tmpSnackListURL)
+        setSnackListURL(tmpSnackListURL);
       })
       .catch((err) => {
         console.log(err);
@@ -60,18 +60,13 @@ export const Result = ({
   };
 
   useEffect(() => {
-    console.log(price, emotion);
-
     getSnackList();
   }, []);
-
-  console.log(snackList);
 
   let sum = 0;
   for (let i = 0; i < snackList.length; i++) {
     sum += snackList[i].price;
   }
-  console.log(sum);
   const handleResult = () => {
     setIsResult(false);
   };
@@ -126,15 +121,13 @@ export const Result = ({
           </div>
 
           <div className="object-center my-10">
-          <a 
-                href={`http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?🍩%0Aお菓子${snackList.length}個%0A合計金額${sum}円%0A%0Aおみくじ結果「${omikuziResult.luck}」%0A${snackListURL}&hashtags=OkashiOmikuzi`} 
-                target="_blank"
+            <a
+              href={`http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?🍩%0Aお菓子${snackList.length}個%0A合計金額${sum}円%0A%0Aおみくじ結果「${omikuziResult.luck}」%0A${snackListURL}&hashtags=OkashiOmikuzi`}
+              target="_blank"
             >
-          <img src={Twitter} className="mx-auto max-h-8 max-w-md"></img>
-          
-          </a>
+              <img src={Twitter} className="mx-auto max-h-8 max-w-md"></img>
+            </a>
           </div>
-
 
           <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-2 md:mx-5">
             {snackList.map((snack, idx) => {
