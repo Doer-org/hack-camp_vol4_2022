@@ -25,12 +25,10 @@ function App() {
           // サイトが変貌します.........🔥🍜
           // テスト用
 
-
-          //   0 <= nowHours && nowHours <= 24 ? (
-          0 <= nowHours && nowHours <= 2 ? (
+          // (0 <= nowHours && nowHours <= 24) ? (
+            (0 <= nowHours && nowHours <= 2) ? (
             <>
               <div className="bg-slate-800">
-
                 <NightHeader />
                 <Routes>
                   <Route path="/" element={<NightHome />} />

@@ -22,7 +22,7 @@ export const NightAbout = () => {
               <div>
                 <a
                   href={`https://github.com/${user.name}`}
-                  className="text-3xl font-medium text-white"
+                  className="text-3xl font-medium lg:text-white"
                 >
                   {user.name}
                 </a>
