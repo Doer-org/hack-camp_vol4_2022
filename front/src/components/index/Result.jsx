@@ -127,7 +127,7 @@ export const Result = ({
 
           <div className="object-center my-10">
           <a 
-                href={`http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?🍩${emotion}%0Aお菓子${snackList.length}個%0A合計金額${sum}円%0A%0Aおみくじ結果「${omikuziResult.luck}」%0A${snackListURL}&hashtags=OkashiOmikuzi`} 
+                href={`http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?🍩%0Aお菓子${snackList.length}個%0A合計金額${sum}円%0A%0Aおみくじ結果「${omikuziResult.luck}」%0A${snackListURL}&hashtags=OkashiOmikuzi`} 
                 target="_blank"
             >
           <img src={Twitter} className="mx-auto max-h-8 max-w-md"></img>
