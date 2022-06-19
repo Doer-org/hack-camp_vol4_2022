@@ -19,6 +19,9 @@ export const Result = ({
   const omikuziResult = omikuzi[randnum];
   let currentEmotion = 0;
 
+  const [snackListURL, setSnackListURL] = useState("");
+  let tmpSnackListURL = "";
+
   if (emotion == "normal") {
     currentEmotion = 0;
   } else if (emotion == "sad") {
@@ -29,6 +32,17 @@ export const Result = ({
     currentEmotion = 3;
   }
 
+  const setTmpSnackList = (data)=>{
+    tmpSnackListURL = "";
+    data.map((d,idx)=>{
+        if (idx < 3){
+            tmpSnackListURL += d.name + "%0A";
+        }else if (idx == 3){
+            tmpSnackListURL += "...%0A";
+        }
+    })
+  }
+
   const getSnackList = () => {
     axios
       .get(
@@ -37,6 +51,8 @@ export const Result = ({
       .then((data) => {
         const resData = data.data.data;
         setSnackList(resData);
+        setTmpSnackList(resData);
+        setSnackListURL(tmpSnackListURL)
       })
       .catch((err) => {
         console.log(err);
@@ -110,7 +126,10 @@ export const Result = ({
           </div>
 
           <div className="object-center my-10">
-          <a href="http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?&hashtags=OkashiOmikuzi" target="_blank">
+          <a 
+                href={`http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?🍩${emotion}%0Aお菓子${snackList.length}個%0A合計金額${sum}円%0A%0Aおみくじ結果「${omikuziResult.luck}」%0A${snackListURL}&hashtags=OkashiOmikuzi`} 
+                target="_blank"
+            >
           <img src={Twitter} className="mx-auto max-h-8 max-w-md"></img>
           
           </a>
