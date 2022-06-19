@@ -24,8 +24,8 @@ function App() {
           // 00:00 ~ 02:00
           // サイトが変貌します.........🔥🍜
           // テスト用
-          //   0 <= nowHours && nowHours <= 24 ? (
-          0 <= nowHours && nowHours <= 2 ? (
+            // 0 <= nowHours && nowHours <= 24 ? (
+          0 <= nowHours && nowHours <= 3 ? (
             <>
               <div className="bg-slate-800">
                 <NightHeader />
