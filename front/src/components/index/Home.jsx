@@ -8,15 +8,8 @@ const Home = () => {
   const [isShow, setShow] = useState(0);
   const [emotion, setEmotion] = useState("");
   const [price, setPrice] = useState(1000);
-  const sleep = (waitMsec) => {
-    var startMsec = new Date();
-    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-    while (new Date() - startMsec < waitMsec);
-    setShow(true);
-  };
 
-  const handleSubmit = (price, emotion) => {
-    console.log(price, emotion);
+  const handleSubmit = () => {
     setIsResult(true);
     setShow(true);
   };
@@ -37,16 +30,16 @@ const Home = () => {
         )
       ) : (
         <>
-            <div className="py-10">
+          <div className="py-10">
             <Form
-                handleSubmit={handleSubmit}
-                emotion={emotion}
-                price={price}
-                setEmotion={setEmotion}
-                setPrice={setPrice}
+              handleSubmit={handleSubmit}
+              emotion={emotion}
+              price={price}
+              setEmotion={setEmotion}
+              setPrice={setPrice}
             />
-            </div>
-            <Member />
+          </div>
+          <Member />
         </>
       )}
     </div>

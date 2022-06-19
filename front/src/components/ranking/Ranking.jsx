@@ -11,28 +11,24 @@ export const Ranking = () => {
       .get(`https://server-doer.herokuapp.com/snack/ranking`)
       .then((data) => {
         const resRank = data.data.data;
-        setRanking(resRank)
-        console.log(resRank);
+        setRanking(resRank);
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     getRanking();
   }, []);
 
-
   return (
     <div>
       <RankTitle />
       <div>
-        {
-          ranking.map((rankSnack, idx) => {
-            return <RankSnack rankSnackInfo={rankSnack} index={idx} key={idx} />
-          })
-        }
+        {ranking.map((rankSnack, idx) => {
+          return <RankSnack rankSnackInfo={rankSnack} index={idx} key={idx} />;
+        })}
       </div>
     </div>
   );
