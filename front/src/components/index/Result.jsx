@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { SnackResult } from "../index/SnackResult";
 import omikuzi from "../../data/omikuzi.json";
 import animationData from "./lottie/100957-eating-cookie.json";
+// import Twitter from "../../data/images/tweet_share.png";
+
 export const Result = ({
   emotion,
   price,
@@ -106,6 +108,13 @@ export const Result = ({
               もう一度遊ぶ
             </button>
           </div>
+
+          <div className="container">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="share-button" data-show-count="false">
+              <img src={Twitter} className="mx-auto"></img>
+            </a>
+          </div>
+
 
           <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-2 md:mx-5">
             {snackList.map((snack, idx) => {
