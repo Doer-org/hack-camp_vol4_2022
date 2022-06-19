@@ -1,16 +1,14 @@
-import heart from "../../data/images/heart.png";
 import React, { useState } from "react";
 import axios from "axios";
-
 import "../../styles/btn/likeBtn.css";
 
-const Snack = ({ snackInfo }) => {
+export const SnackResult = ({ snackInfo, iine }) => {
   const [checkLike, setCheckLike] = useState(false);
 
   // いいね数更新用
-  const updateSnackLikes = (id) => {
+  const updateSnackLikes = (id, iine) => {
     axios
-      .get(`https://server-doer.herokuapp.com/snack/like/${id}`)
+      .get(`https://server-doer.herokuapp.com/snack/like/${id}?value=${iine}`)
       .then((data) => {
         // console.log("success")
       })
@@ -42,8 +40,7 @@ const Snack = ({ snackInfo }) => {
                                 text-white focus:ring-4 
                                 focus:outline-none focus:ring-pink-300
                                 font-medium rounded-full 
-                                text-sm p-1 text-center 
-inline-flex items-center 
+                                text-sm p-1 text-center inline-flex items-center 
                                 "
           >
             <svg
@@ -58,7 +55,7 @@ inline-flex items-center
                 clipRule="evenodd"
               ></path>
             </svg>
-            {snackInfo.likes + 1}
+            {snackInfo.likes + iine}
           </button>
         ) : (
           <button
@@ -76,7 +73,7 @@ inline-flex items-center
                                 "
             onClick={() => {
               setCheckLike(true);
-              updateSnackLikes(snackInfo.id);
+              updateSnackLikes(snackInfo.id, iine);
             }}
           >
             <svg
@@ -98,5 +95,3 @@ inline-flex items-center
     </div>
   );
 };
-
-export default Snack;

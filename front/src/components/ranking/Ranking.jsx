@@ -4,16 +4,15 @@ import { RankTitle } from "./RankTitle";
 import axios from "axios";
 
 export const Ranking = () => {
-
-  const [ranking, setRanking] = useState([])
+  const [ranking, setRanking] = useState([]);
 
   const getRanking = () => {
     axios
-      .get(`http://localhost:8000/snack/ranking`)
+      .get(`https://server-doer.herokuapp.com/snack/ranking`)
       .then((data) => {
-        const resRank = data.data.data
-        console.log(resRank)
+        const resRank = data.data.data;
         setRanking(resRank)
+        console.log(resRank);
       })
       .catch((err) => {
         console.log(err)
@@ -21,21 +20,20 @@ export const Ranking = () => {
   }
 
   useEffect(() => {
-    getRanking()
-    console.log("hello")
+    getRanking();
   }, []);
 
 
   return (
-
-
     <div>
-        <RankTitle />
-      {
-        ranking.map((rankSnack,idx) => {
-          return <RankSnack rankSnackInfo={rankSnack} key={idx}/>
-        })
-      }
+      <RankTitle />
+      <div>
+        {
+          ranking.map((rankSnack, idx) => {
+            return <RankSnack rankSnackInfo={rankSnack} index={idx} key={idx} />
+          })
+        }
+      </div>
     </div>
   );
 };

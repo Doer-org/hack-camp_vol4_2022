@@ -1,14 +1,19 @@
 import "../../../styles/App.css";
 import axios from "axios";
+import Lottie from "react-lottie";
 import { useState, useEffect } from "react";
+import omikuzi from "../index/data/omikuzi.json";
 import Ramen from "../../ramenList/Ramen";
+import animationData from "./lottie/19411-ramen-noodles.json";
 
-export const NightResult = () => {
-  const [ramenList, setRamenList] = useState([]);
+export const NightResult = ({ setIsResult }) => {
+  const [ramenList, setRamenList] = useState({});
+  const randnum = Math.floor(Math.random() * 5);
+  const omikuziResult = omikuzi[randnum];
 
   const getRamenList = () => {
     axios
-      .get(`http://localhost:8000/ramen/random`)
+      .get(`https://server-doer.herokuapp.com/ramen/random`)
       .then((data) => {
         const resData = data.data.data;
         setRamenList(resData);
@@ -21,14 +26,59 @@ export const NightResult = () => {
   useEffect(() => {
     getRamenList();
   }, []);
+
+  const handleResult = () => {
+    setIsResult(false);
+  };
+
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3 * 1000);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
+    <div>
+      {loading ? (
+        <div>
+          <Lottie options={defaultOptions} height={250} width={250} />
+        </div>
+      ) : (
     <div className="py-12">
       <p className="text-3xl text-center text-white">おみくじ結果！！🎉</p>
-      <div className=" grid md:grid-cols-2 lg:grid-cols-3 gap-5 mx-2 md:mx-5">
-        {ramenList.map((ramen, idx) => {
-          return <Ramen ramenInfo={ramen} key={idx} />;
-        })}
+      <div className="grid grid-cols-5 text-center my-5">
+        <div className="col-span-5 m-2 md:col-span-3 md:col-start-2 shadow-2xl results border-4">
+          <div className="main-color p-10">
+            <p className="text-2xl font-extrabold">{omikuziResult.luck}</p>
+            <p>{omikuziResult.description}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className=" text-center">
+        <button
+          onClick={handleResult}
+          className="p-5 bg-orange-200 hover:bg-orange-500 hover:text-white rounded-2xl shadow-2xl"
+        >
+          もう一度遊ぶ
+        </button>
+      </div>
+      <div>
+        <div className=" grid grid-cols-1 gap-5 mx-2 md:mx-5  text-center">
+          <Ramen ramenInfo={ramenList} key={ramenList.id} className = ""/>;
+        </div>
       </div>
     </div>
+      )}
+      </div>
   );
 };

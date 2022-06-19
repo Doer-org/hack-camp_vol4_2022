@@ -1,9 +1,9 @@
-.oneArea {
-    background: linear-gradient(
-      180deg,
-      #b1342b 0%,
-      #b1342b 50%,
-      white 50%,
-      white 100%
-    );
-  }
+.oneArea-Night {
+  background: linear-gradient(
+    180deg,
+    #b1342b 0%,
+    #b1342b 50%,
+    white 50%,
+    white 100%
+  );
+}

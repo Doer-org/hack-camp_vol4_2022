@@ -44,3 +44,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .footer {
   background-color: #ff8700;
 }
+
+.night-footer {
+  background-color: #b1342b;
+}

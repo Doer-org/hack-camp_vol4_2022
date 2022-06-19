@@ -6,7 +6,8 @@ import "../../styles/btn/likeBtn.css";
 const Ramen = ({ ramenInfo }) => {
   return (
     <div className="flex justify-center my-5">
-      <div className="border grid grid-cols-5 justify-center place-items-center justify-items-center rounded-lg border-r shadow-lg">
+      <div 
+      className="border grid grid-cols-5 justify-center place-items-center justify-items-center rounded-lg border-r shadow-lg bg-white max-w-xl">
         <img
           src={ramenInfo.imgUrl}
           alt="商品画像"
@@ -15,7 +16,6 @@ const Ramen = ({ ramenInfo }) => {
         <p className="text-xs mx-3 sm:text-lg col-span-2 sm:mx-3">
           {ramenInfo.name}
         </p>
-      
       </div>
     </div>
   );

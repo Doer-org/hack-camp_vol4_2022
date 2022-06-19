@@ -12,7 +12,7 @@ export const NightAbout = () => {
           return (
             <div
               key={i}
-              className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center rounded-2xl shadow-slate-300 shadow-lg m-5 md:m-10 md:p-10 p-5 break-all oneArea"
+              className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center rounded-2xl shadow-slate-300 shadow-lg m-5 md:m-10 md:p-10 p-5 break-all oneArea-Night"
             >
               <img
                 src={user.image}
@@ -22,7 +22,7 @@ export const NightAbout = () => {
               <div>
                 <a
                   href={`https://github.com/${user.name}`}
-                  className="text-3xl font-medium text-white"
+                  className="text-3xl font-medium lg:text-white"
                 >
                   {user.name}
                 </a>

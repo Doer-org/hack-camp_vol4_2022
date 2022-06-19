@@ -2,11 +2,12 @@ package infrastructure
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/Doer-org/hack-camp_vol4_2022/server/interfaces/controllers"
-	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
 )
 
 type Routing struct {
@@ -57,6 +58,7 @@ func NewRouting(db *DB) *Routing {
 
 func (r *Routing) setRouting() {
 	snackController := controllers.NewSnackController(r.DB)
+	ramenController := controllers.NewRamenController(r.DB)
 
 	// 指定したidのお菓子を取得するAPI
 	r.Gin.GET("/snack/:id", func(c *gin.Context) { snackController.FindByID(c) })
@@ -74,13 +76,15 @@ func (r *Routing) setRouting() {
 	// お菓子を全部返すAPI
 	r.Gin.GET("/snack/all", func(c *gin.Context) { snackController.AllSnack(c) })
 
+	// らーめんを1つ返すAPI
+	r.Gin.GET("/ramen/random", func(c *gin.Context) { ramenController.GetRandom(c) })
 
 }
 
 func (r *Routing) Run() {
 	port := fmt.Sprintf(
 		":%s",
-		r.Port,
+		os.Getenv("PORT"),
 	)
 	r.Gin.Run(port)
 }
