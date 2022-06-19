@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Result } from "./Result";
 import { Form } from "./Form";
+import Member from "./Member";
 
 const Home = () => {
   const [isResult, setIsResult] = useState(false);
@@ -35,15 +36,18 @@ const Home = () => {
           <div>aaa</div>
         )
       ) : (
-        <div className="py-10">
-          <Form
-            handleSubmit={handleSubmit}
-            emotion={emotion}
-            price={price}
-            setEmotion={setEmotion}
-            setPrice={setPrice}
-          />
-        </div>
+        <>
+            <div className="py-10">
+            <Form
+                handleSubmit={handleSubmit}
+                emotion={emotion}
+                price={price}
+                setEmotion={setEmotion}
+                setPrice={setPrice}
+            />
+            </div>
+            <Member />
+        </>
       )}
     </div>
   );

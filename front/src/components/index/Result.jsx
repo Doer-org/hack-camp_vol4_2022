@@ -32,7 +32,7 @@ export const Result = ({
   const getSnackList = () => {
     axios
       .get(
-        `http://localhost:8000/snack/random?price=${price}&emotion=${currentEmotion}`
+        `https://server-doer.herokuapp.com/snack/random?price=${price}&emotion=${currentEmotion}`
       )
       .then((data) => {
         const resData = data.data.data;
