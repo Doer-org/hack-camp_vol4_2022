@@ -11,9 +11,7 @@ const Snack = ({ snackInfo }) => {
   const updateSnackLikes = (id) => {
     axios
       .get(`https://server-doer.herokuapp.com/snack/like/${id}`)
-      .then((data) => {
-        // console.log("success")
-      })
+      .then((data) => {})
       .catch((err) => {
         console.log(err);
       });
