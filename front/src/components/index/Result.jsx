@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { SnackResult } from "../index/SnackResult";
 import omikuzi from "../../data/omikuzi.json";
 import animationData from "./lottie/100957-eating-cookie.json";
-// import Twitter from "../../data/images/tweet_share.png";
+import Twitter from "../../data/images/twitter_share.jpeg";
 
 export const Result = ({
   emotion,
@@ -109,10 +109,11 @@ export const Result = ({
             </button>
           </div>
 
-          <div className="container">
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="share-button" data-show-count="false">
-              <img src={Twitter} className="mx-auto"></img>
-            </a>
+          <div className="object-center my-10">
+          <a href="http://twitter.com/share?url=okashi-omikuzi.vercel.app&text=OkashiOmikuziの結果は!?&hashtags=OkashiOmikuzi" target="_blank">
+          <img src={Twitter} className="mx-auto max-h-8 max-w-md"></img>
+          
+          </a>
           </div>
 
 
