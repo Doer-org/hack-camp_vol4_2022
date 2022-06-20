@@ -1,5 +1,5 @@
 import psycopg2
-from settings.settings import POSTGRES_DB,POSTGRES_USER,POSTGRES_PASSWORD
+from settings.settings import POSTGRES_DB,POSTGRES_USER,POSTGRES_PASSWORD,DATABASE_URL
 
 #DBへの接続
 def connect_to_db():
@@ -11,6 +11,12 @@ def connect_to_db():
         password=POSTGRES_PASSWORD
     )
 
+    return conn
+
+
+#herokuDBへの接続
+def connect_to_herokudb():
+    conn = psycopg2.connect(DATABASE_URL)
     return conn
 
 
