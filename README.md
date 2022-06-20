@@ -32,16 +32,24 @@ https://twitter.com/du_doer/status/1538491383157207040
 
 このアプリは「おかし🍩」×「おみくじ」をテーマにした
 
-#### 「おかしおみくじ」というアプリです！
+#### 「[おかしおみくじ](https://okashi-omikuzi.vercel.app/)」というアプリです！
+
+<br>
+
+デプロイ先はこちら
+
+https://okashi-omikuzi.vercel.app/
+
+(注意 : backendがherokuの無料枠のため、データが返ってくるまで**時間がかかる**場合があります)
 
 <br>
 
 ### 機能
 
-- 感情と予算から、おかしのレコメンド
+- **感情と予算**から、おかしのレコメンド
 - アニメーション機能
-- 運がいいほどお菓子への愛を伝えられるいいね機能
-- 深夜0時から2時にサイトが変貌する仕様
+- **運がいいほど**お菓子への愛を伝えられるいいね機能
+- 深夜0時から2時にサイトが**変貌する**仕様
 
 <br>
  
@@ -75,11 +83,19 @@ https://twitter.com/du_doer/status/1538491383157207040
        
 ## slide
        
-<img width="600px" src="https://user-images.githubusercontent.com/70263039/174618357-7f17a091-3dc5-4b0d-b485-9669a12184a2.png" />
+<img width="600px" src="https://user-images.githubusercontent.com/70263039/174618357-7f17a091-3dc5-4b0d-b485-9669a12184a2.png" ></img>
+        
 
        
 https://docs.google.com/presentation/d/1rMhm8yX-bwOKEwYL25DTuYTgPkUsRlQdMh0ilsdFCWU/edit#slide=id.g1334bf17701_0_423
        
+<br>
+        
+## 技術スタック
+     
+        
+<img width="600px" src="https://user-images.githubusercontent.com/70263039/174619831-b994961f-f2f9-478e-9027-4a917bd3b648.png" />
+        
 <br>
         
 ## Getting Started
