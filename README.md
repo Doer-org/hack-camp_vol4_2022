@@ -38,6 +38,7 @@ https://twitter.com/du_doer/status/1538491383157207040
 
 デプロイ先はこちら
 
+
 https://okashi-omikuzi.vercel.app/
 
 (注意 : backendがherokuの無料枠のため、データが返ってくるまで**時間がかかる**場合があります)
@@ -164,6 +165,24 @@ do'erからのメッセージ
 ```
 make doer
 ```
+
+<br>
+       
+## deploy
+       
+### backend heroku (branch: release)
+
+herokuでserver以下をデプロイしてます
+
+```
+git subtree push --prefix server/ heroku master
+```
+
+<br>
+       
+### frontend vercel (branch: release-front)
+
+vercelでfront以下をデプロイしてます
 
 <br>
 

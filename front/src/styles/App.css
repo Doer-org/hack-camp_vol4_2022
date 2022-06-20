@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Zen+Maru+Gothic&display=swap');
+
+.main-color {
+  font-family: "Zen Maru Gothic", sans-serif;
+  background-color: #ff8700;
+}
+
+.title {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.results {
+  border-color: #ff8700;
+}
+
+.result-night {
+  border-color:#b1342b;
+}
+
+
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+} 
+
+.night-color {
+  font-family: "Zen Maru Gothic", sans-serif;
+  background-color: #b1342b;
+}
+
+.ranking {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ranking_sentence {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.footer {
+  background-color: #ff8700;
+}
+
+.night-footer {
+  background-color: #b1342b;
+}
