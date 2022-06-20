@@ -100,3 +100,19 @@ curl http://localhost:8000/snack/like/1
 
 ## reference
 - [Clean Architecture を用いた go + gin のバックエンド (API) 構築](http://psychedelicnekopunch.com/archives/1308)
+
+
+## deploy memo
+
+heroku createでアプリ作成
+
+addsonでsql用意
+heroku addons:create heroku-postgresql:hobby-dev
+
+localからcsvのデータを挿入
+
+herokuの環境変数設定
+
+Dockerfileのディレクトリに移動し
+heroku container:push web
+イメージのデプロイ
